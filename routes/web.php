@@ -7,4 +7,4 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 Route::get('/', [HomeController::class, 'index'])->name('home-page');
-Route::get('/dashboard', [DashboardController::class, 'dashboard-index'])->name('home-dashboard-page');
+Route::get('/dashboard', [DashboardController::class, 'dashboardIndex'])->name('home-dashboard-page');
