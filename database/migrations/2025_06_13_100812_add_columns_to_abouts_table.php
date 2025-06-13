@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::table('abouts', function (Blueprint $table) {
             //
+            $table->string('summary')
+                ->nullable()
+                ->after('description');
         });
     }
 
@@ -23,6 +26,7 @@ return new class extends Migration
     {
         Schema::table('abouts', function (Blueprint $table) {
             //
+
         });
     }
 };

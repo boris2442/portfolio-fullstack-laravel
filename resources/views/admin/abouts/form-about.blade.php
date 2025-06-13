@@ -2,18 +2,18 @@
                     <h1>About Me</h1>
                     <button class="secondary">Save Changes</button>
                 </div>
-
+{{ $about }}
                 <div class="card-wrapper">
                     <div class="wrapper_left">
                         <div class="card" >
-                            <label>Full Name</label>
-                            <input type="text">
+                            <label for="name">Full Name</label>
+                            <input type="text" name="name" id="name" value="">
             
-                            <label>Email</label>
-                            <input type="email">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" value="" >
             
-                            <label>Phone</label>
-                            <input type="text">
+                            <label for="phone">Phone</label>
+                            <input type="text" name="phone" id="phone" value="" >
             
                             <label>Address</label>
                             <input type="text" >
