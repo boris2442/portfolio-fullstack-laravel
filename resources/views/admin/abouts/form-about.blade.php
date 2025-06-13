@@ -1,6 +1,8 @@
 <div class="titlebar">
     <h1>About Me</h1>
-    <button class="secondary">Save Changes</button>
+    <button class="secondary">
+        {{ $FormMode === 'edit' ? 'update' : '' }}
+        Save Changes</button>
 </div>
 {{ $about }}
 <div class="card-wrapper">
@@ -26,33 +28,34 @@
             <label for="tagline">Tagline</label>
             <input type="text" name="tagline" id="tagline"
                 value="{{ isset($about->tagline) ? $about->tagline : '' }}">
+                @error('name')
+                <span class='text-red-400' >{{$message}}</span>
+                @enderror()
         </div>
 
     </div>
     {{-- {{ $about->home_image }} --}}
     <div class="wrapper_right">
         <div class="card">
-            <label for="fileimg"
-            class="block mb-2 text-lg font-semiblod text-white bg-[#22c552] rounded-lg p-2">Home image</label>
-            <img src="{{isset($about->image)? asset('storage/images/' .$about->home_image) :asset('storage/images/no-image.png') }}" class="avatar_img object-cover"
-            id="homeImage-preview">
+            <label for="fileimg" class="block mb-2 text-lg font-semiblod text-white bg-[#22c552] rounded-lg p-2">Home
+                image</label>
+            <img src="{{ isset($about->image) ? asset('storage/images/' . $about->home_image) : asset('storage/images/no-image.png') }}"
+                class="avatar_img object-cover" id="homeImage-preview">
             {{-- {{ isset($about->home_image)? asset('') }}: ''  --}}
 
             {{-- ../../template/assets/img/avatar.jpg --}}
 
-            <input type="file" id="fileimg"
-            onChange="showHomeImageFile(event)"
-            class="block w-full text-sm text-green-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none focus:ring-2 focus:to-green-600-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-green-700 hover:file:bg-green-100 transition">
+            <input type="file" id="fileimg" onChange="showHomeImageFile(event)"
+                class="block w-full text-sm text-green-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none focus:ring-2 focus:to-green-600-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-green-700 hover:file:bg-green-100 transition">
         </div>
         <div class="card">
-              <label for="fileimg"
-            class="block mb-2 text-lg font-semiblod text-white bg-[#22c552] rounded-lg p-2">Banner Image</label>
-            <img src="{{isset($about->banner_image)? asset('storage/images/' .$about->banner_image) :asset('storage/images/no-image.png') }}" class="avatar_img" 
-            id="bannerImage-preview">
-            <input type="file" 
-            id="fileimg"
-            onChange=bannerImageFile(event)
-             class="block w-full text-sm text-green-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none focus:ring-2 focus:to-green-600-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-green-700 hover:file:bg-green-100 transition">
+            <label for="fileimg" class="block mb-2 text-lg font-semiblod text-white bg-[#22c552] rounded-lg p-2 object-cover">Banner
+                Image</label>
+            <img src="{{ isset($about->banner_image) ? asset('storage/images/' . $about->banner_image) : asset('storage/images/no-image.png') }}"
+                class="avatar_img" id="bannerImage-preview">
+            <input type="file" id="fileimg" onChange=bannerImageFile(event)
+                class="block w-full text-sm text-green-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none focus:ring-2 focus:to-green-600-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-green-700 hover:file:bg-green-100 transition">
+              
         </div>
         <div class="card">
             <p>CV</p>
@@ -61,24 +64,25 @@
     </div>
 </div>
 <script>
-    function showHomeImageFile(event){
-        let input=event.target;
-        let reader=new FileReader();
-        reader.onload=function(){
-            let dataURL=reader.result;
-            let output=document.getElementById('homeImage-preview');
-            output.src=dataURL;
+    function showHomeImageFile(event) {
+        let input = event.target;
+        let reader = new FileReader();
+        reader.onload = function() {
+            let dataURL = reader.result;
+            let output = document.getElementById('homeImage-preview');
+            output.src = dataURL;
         }
         reader.readAsDataURL(input.files[0]);
 
     }
-    function bannerImageFile(event){
-        let input=event.target;
-        let reader=new FileReader();
-        reader.onload=function(){
-            let dataURL=reader.result;
-            let output=document.getElementById('bannerImage-preview');
-            output.src=dataURL;
+
+    function bannerImageFile(event) {
+        let input = event.target;
+        let reader = new FileReader();
+        reader.onload = function() {
+            let dataURL = reader.result;
+            let output = document.getElementById('bannerImage-preview');
+            output.src = dataURL;
         }
         reader.readAsDataURL(input.files[0]);
 
