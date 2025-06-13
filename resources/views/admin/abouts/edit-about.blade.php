@@ -7,6 +7,7 @@
                     <h1>About Me</h1>
                     <button class="secondary">Save Changes</button>
                 </div>
+
                 <div class="card-wrapper">
                     <div class="wrapper_left">
                         <div class="card" >
@@ -46,6 +47,7 @@
                         </div>     
                     </div>
                 </div>
+
                 <div class="card-wrapper" style="margin-top:-5px">
                     <div class="wrapper_left">
                         <div class="card">
@@ -89,7 +91,7 @@
                 </div>
                 
             </section>
-        
+         <!--==================== END ABOUT ====================-->
 </main>
 
 
