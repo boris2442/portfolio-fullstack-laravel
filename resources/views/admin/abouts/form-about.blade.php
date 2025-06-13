@@ -1,44 +1,57 @@
 <div class="titlebar">
-                    <h1>About Me</h1>
-                    <button class="secondary">Save Changes</button>
-                </div>
+    <h1>About Me</h1>
+    <button class="secondary">Save Changes</button>
+</div>
 {{ $about }}
-                <div class="card-wrapper">
-                    <div class="wrapper_left">
-                        <div class="card" >
-                            <label for="name">Full Name</label>
-                            <input type="text" name="name" id="name" value="">
-            
-                            <label for="email">Email</label>
-                            <input type="email" name="email" id="email" value="" >
-            
-                            <label for="phone">Phone</label>
-                            <input type="text" name="phone" id="phone" value="" >
-            
-                            <label>Address</label>
-                            <input type="text" >
-            
-                            <label>Description</label>
-                            <textarea cols="10" rows="3"  ></textarea>
-                        </div>
-                        <div class="card">
-                            <label>Tagline</label>
-                            <input type="text">
-                        </div>
-                        
-                    </div>
-                    <div class="wrapper_right">
-                        <div class="card">
-                            <img src="../../template/assets/img/avatar.jpg" class="avatar_img">
-                            <input type="file" id="fileimg" >  
-                        </div>
-                        <div class="card">
-                            <img src="../../template/assets/img/avatar.jpg" class="avatar_img">
-                            <input type="file" id="fileimg" >  
-                        </div>
-                        <div class="card">
-                            <p>CV</p>
-                            <input type="file" id="filecv" >    
-                        </div>     
-                    </div>
-                </div>
+<div class="card-wrapper">
+    <div class="wrapper_left">
+        <div class="card">
+            <label for="name">Full Name</label>
+            <input type="text" name="name" id="name" value="{{ isset($about->name) ? $about->name : '' }}">
+
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" value="{{ isset($about->email) ? $about->email : '' }}">
+
+            <label for="phone">Phone</label>
+            <input type="text" name="phone" id="phone" value="{{ isset($about->phone) ? $about->name : '' }}">
+
+            <label for="phone">Address</label>
+            <input type="text" name="phone" id="phone"
+                value="{{ isset($about->adress) ? $about->adress : '' }}">
+
+            <label for="description">Description</label>
+            <textarea cols="10" rows="3">{{ isset($about->description) ? $about->description : '' }}</textarea>
+        </div>
+        <div class="card">
+            <label for="tagline">Tagline</label>
+            <input type="text" name="tagline" id="tagline"
+                value="{{ isset($about->tagline) ? $about->tagline : '' }}">
+        </div>
+
+    </div>
+    {{-- {{ $about->home_image }} --}}
+    <div class="wrapper_right">
+        <div class="card">
+            <label for="fileimg"
+            class="block mb-2 text-lg font-semiblod text-white bg-[#22c552] rounded-lg p-2">Home image</label>
+            <img src="{{isset($about->image)? asset('storage/images/' .$about->home_image) :asset('storage/images/no-image.png') }}" class="avatar_img">
+            {{-- {{ isset($about->home_image)? asset('') }}: ''  --}}
+
+            {{-- ../../template/assets/img/avatar.jpg --}}
+
+            <input type="file" id="fileimg"
+            class="block w-full text-sm text-green-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none focus:ring-2 focus:to-green-600-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-green-700 hover:file:bg-green-100 transition">
+        </div>
+        <div class="card">
+              <label for="fileimg"
+            class="block mb-2 text-lg font-semiblod text-white bg-[#22c552] rounded-lg p-2">Home image</label>
+            <img src="{{isset($about->banner_image)? asset('storage/images/' .$about->banner_image) :asset('storage/images/no-image.png') }}" class="avatar_img">
+            <input type="file" id="fileimg"
+             class="block w-full text-sm text-green-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none focus:ring-2 focus:to-green-600-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-green-700 hover:file:bg-green-100 transition">
+        </div>
+        <div class="card">
+            <p>CV</p>
+            <input type="file" id="filecv">
+        </div>
+    </div>
+</div>
