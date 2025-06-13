@@ -20,7 +20,7 @@
                             </a>
                         </li>
                         <li>
-                            <a  href="about.html">
+                            <a  href="{{ route('edit-about') }}">
                                 <span><i class="fas fa-home"> </i></span>
                                 <span>About Me</span>
                             </a>
