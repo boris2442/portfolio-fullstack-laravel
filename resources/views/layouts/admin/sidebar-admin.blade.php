@@ -8,9 +8,15 @@
                 <div class="nav-list">
                     <ul>
                         <li>
-                            <a class="nav-active" href="dashboard.html">
+                            <a class="nav-active" href="{{ route('home-page') }}">
                                 <span><i class="fas fa-home"> </i></span>
-                                <span>Home</span>
+                                <span>Portfolio </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-active" href="{{ route('admin-dashboard') }}">
+                                <span><i class="fas fa-home"> </i></span>
+                                <span>Home </span>
                             </a>
                         </li>
                         <li>

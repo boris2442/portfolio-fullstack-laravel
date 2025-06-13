@@ -26,6 +26,9 @@
                     <li class="nav-item">
                         <a href="#contact" class="nav_link">Contact Me</a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin-dashboard') }}" class="nav_link">Dashboard</a>
+                    </li>
                 </ul>
 
                 <div class="nav_close" id="nav-close">
