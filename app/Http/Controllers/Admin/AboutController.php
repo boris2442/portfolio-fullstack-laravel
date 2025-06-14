@@ -30,7 +30,7 @@ class AboutController extends Controller
             "banner_image" => "image|mimes:jpg, png, jpeg, gif/max:2048",
             "cv" => "files|mimes:pdf|max:5120",
         ]);
-        $about=About::latest()->first();
+        $about = About::latest()->first();
         $about->fill($validation);
         $about->save();
         return redirect()->route('edit-about')->with("success", "Edit statut with success");

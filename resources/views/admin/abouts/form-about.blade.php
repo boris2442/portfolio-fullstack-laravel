@@ -1,3 +1,6 @@
+
+
+
 <div class="titlebar">
     <h1>About Me</h1>
     <button class="secondary">
