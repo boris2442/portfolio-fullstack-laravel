@@ -76,8 +76,7 @@
 
                 <div class="about_data">
                     <p class="about_description">
-                        FullStack Web developer, with extencive knowledge and years of experience,
-                        working in web technologies and UI/UX design, delivering quality work
+                        {{ $about->description }}
                     </p>
                     <div class="about_info">
                         <div>
