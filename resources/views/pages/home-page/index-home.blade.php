@@ -11,9 +11,9 @@
 
                 <div class="home_data">
                     <h1 class="home_title">Hi, I'am {{$about->name}}</h1>
-                    <h3 class="home_subtitle">FullStack Web developer</h3>
+                    <h3 class="home_subtitle">{{$about->tagline}}</h3>
                     <p class="home_description">
-                        High level experience in web design,fornt-en and backend development, producing quality work.
+                       {{ $about->summary }}
                     </p>
                     <a href="#contact" class="button button--flex">
                         Contact Me <i class="uil uil-message button__icon"></i>
@@ -688,7 +688,7 @@
                                     class="testimonial_img">
 
                                 <div>
-                                    <h3 class="testimonial_name">John Smith</h3>
+                                    <h3 class="testimonial_name">{{$about->name}}</h3>
                                     <span class="testimonial_client">Client</span>
                                 </div>
                             </div>
