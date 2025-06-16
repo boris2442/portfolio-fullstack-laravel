@@ -23,11 +23,11 @@
                     </li>
                 </ul>
                 <div class="footer_socails">
-                    <a href="https://www.facebook.com" target="_blank" class="footer_social">
-                        <i class="uil uil-facebook-f"></i>
+                    <a href="https://www.linkedin.com/in/boris-aubin-simo-26b9a0369" target="_blank" class="footer_social">
+                        <i class="uil uil-linkedin"></i>
                     </a>
-                    <a href="https://www.instagram.com" target="_blank" class="footer_social">
-                        <i class="uil uil-instagram"></i>
+                    <a href="https://www.github.com/boris2442" target="_blank" class="footer_social">
+                        <i class="uil uil-github-alt"></i>
                     </a>
                     <a href="https://www.twitter.com" class="footer_social">
                         <i class="uil uil-twitter-alt"></i>

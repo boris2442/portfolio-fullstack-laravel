@@ -6,7 +6,8 @@
         <section class="home section" id="home">
             <div class="home_container container grid">
                 <div class="home_img">
-                    <img src="../../template/assets/img/home.png" alt="">
+                    {{-- <img src="../../template/assets/img/home.png" alt=""> --}}
+                    <img src="{{ isset($about->banner_image) ? asset('storage/images/' . $about->banner_image) : asset('storage/images/no-image.png') }}" alt="">
                 </div>
 
                 <div class="home_data">
@@ -33,7 +34,7 @@
                             <a href="https://www.dribbble.com" target="_blank" class="home_social-icon">
                                 <i class="uil uil-dribbble"></i>
                             </a>
-                            <a href="https://www.github.com" target="_blank" class="home_social-icon">
+                            <a href="https://www.github.com/boris2442" target="_blank" class="home_social-icon">
                                 <i class="uil uil-github-alt"></i>
                             </a>
                         </div>
@@ -72,7 +73,8 @@
             <span class="section__subtitle">My introduction</span>
 
             <div class="about_container container grid">
-                <img src="../../template/assets/img/about-img.png" alt="" class="about_img">
+                {{-- <img src="../../template/assets/img/about-img.png" alt="" class="about_img"> --}}
+                <img src="{{ isset($about->home_image) ? asset('storage/images/' . $about->home_image) : asset('storage/images/no-image.png') }}" alt="" class="about_img">
 
                 <div class="about_data">
                     <p class="about_description">
