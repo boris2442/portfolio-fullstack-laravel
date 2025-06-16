@@ -1,10 +1,10 @@
  <header>
         <nav>
             <ul>
-                <li><img src="../../template/assets/img/logo.png" alt=""></li>
+                <li><img src="{{ asset('template/assets/img/logo.png') }}" alt="logo"></li>
             </ul>
             <ul class="header-profile">
-                <li class="avatar-item"><img src="../../template/assets/img/avatar.jpg" alt="" class="avatar-img"></li>
+                <li class="avatar-item"><img src="{{ asset('template/assets/img/avatar.jpg') }}" alt="avatar_image" class="avatar-img"></li>
                 <li><span>team2devs.com</span></li>
             </ul>
         </nav>

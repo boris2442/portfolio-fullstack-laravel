@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,9 +12,10 @@
     <!-- CSS -->
     <link rel="stylesheet" href="../../template/assets/css/admin.css">
 </head>
+
 <body>
 
-    <header >
+    <header>
         <nav>
             <ul>
                 <li><img src="../../template/assets/img/logo.png" alt=""></li>
@@ -26,13 +28,13 @@
 
         <span class="header-profile-nav">
             <span> <i class="fas fa-sort-up"></i></span>
-        <ul>
-            <li><a href="#">Profile</a></li>
-            <hr>
-            <li><a href="#">Message</a></li>
-            <hr>
-            <li><a href="#">Logout</a></li>
-        </ul>
+            <ul>
+                <li><a href="#">Profile</a></li>
+                <hr>
+                <li><a href="#">Message</a></li>
+                <hr>
+                <li><a href="#">Logout</a></li>
+            </ul>
         </span>
 
     </header>
@@ -45,19 +47,19 @@
                 <div class="nav-list">
                     <ul>
                         <li>
-                            <a  href="dashboard.html">
+                            <a href="dashboard.html">
                                 <span><i class="fas fa-home"> </i></span>
                                 <span>Home</span>
                             </a>
                         </li>
                         <li>
-                            <a  href="about.html">
+                            <a href="about.html">
                                 <span><i class="fas fa-home"> </i></span>
                                 <span>About Me</span>
                             </a>
                         </li>
                         <li>
-                            <a  href="service.html">
+                            <a href="service.html">
                                 <span><i class="fas fa-home"> </i></span>
                                 <span>Services</span>
                             </a>
@@ -75,25 +77,25 @@
                             </a>
                         </li>
                         <li>
-                            <a  href="experience.html">
+                            <a href="experience.html">
                                 <span><i class="fas fa-home"> </i></span>
                                 <span>Experiences</span>
                             </a>
                         </li>
                         <li>
-                            <a  href="project.html">
+                            <a href="project.html">
                                 <span><i class="fas fa-home"> </i></span>
                                 <span>Projects</span>
                             </a>
                         </li>
                         <li>
-                            <a  href="testimonial.html">
+                            <a href="testimonial.html">
                                 <span><i class="fas fa-home"> </i></span>
                                 <span>Testimonials</span>
                             </a>
                         </li>
                         <li>
-                            <a  href="message.html">
+                            <a href="message.html">
                                 <span><i class="fas fa-home"> </i></span>
                                 <span>Messages</span>
                             </a>
@@ -104,7 +106,7 @@
                                 <span>Users</span>
                             </a>
                         </li>
-                        
+
                     </ul>
                 </div>
                 <div class="nav-list">
@@ -123,7 +125,7 @@
     </aside>
     <main>
 
-         <!--==================== MEDIAS SETTING ====================-->
+        <!--==================== MEDIAS SETTING ====================-->
         <section class="setting" id="setting">
             <div class="setting-wrapper">
                 <div class="setting_nav">
@@ -136,13 +138,16 @@
                             <div class="nav-list">
                                 <ul class="nav-list-item-setting">
                                     <li>
-                                        <a aria-current="page" href="/admin/abouts" class="router-link-active nav-active setting-link"><span><i class="fas fa-cog"></i></span><span>About Me</span>
+                                        <a aria-current="page" href="/admin/abouts"
+                                            class="router-link-active nav-active setting-link"><span><i
+                                                    class="fas fa-cog"></i></span><span>About Me</span>
                                         </a>
                                     </li>
                                 </ul>
                                 <ul class="nav-list-item-setting">
                                     <li>
-                                        <a aria-current="page" href="/admin/abouts" class="setting-link"><span><i class="fas fa-cog"></i></span><span>My social media</span>
+                                        <a aria-current="page" href="/admin/abouts" class="setting-link"><span><i
+                                                    class="fas fa-cog"></i></span><span>My social media</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -150,15 +155,17 @@
                         </div>
                     </nav>
                 </div>
+
+                
                 <div class="setting_content">
-                     <section class="about" id="about">
+                    <section class="about" id="about">
                         <div class="titlebar">
                             <h1>Setting</h1>
                             <button>Save Changes</button>
                         </div>
                         <div class="card-wrapper">
                             <div class="wrapper_left">
-                                <div class="card" >
+                                <div class="card">
                                     <label>Full Name</label>
                                     <input type="text">
 
@@ -169,10 +176,10 @@
                                     <input type="text">
 
                                     <label>Address</label>
-                                    <input type="text" >
-            
+                                    <input type="text">
+
                                     <label>Description</label>
-                                    <textarea cols="10" rows="5"  ></textarea>
+                                    <textarea cols="10" rows="5"></textarea>
                                 </div>
                                 <div class="card">
                                     <label>Tagline</label>
@@ -182,15 +189,15 @@
                             <div class="wrapper_right">
                                 <div class="card">
                                     <img src="../../template/assets/img/avatar.jpg" class="avatar_img">
-                                    <input type="file" id="fileimg" >  
+                                    <input type="file" id="fileimg">
                                 </div>
                                 <div class="card">
                                     <p>CV</p>
-                                    <input type="file" id="filecv" />    
-                                </div>     
+                                    <input type="file" id="filecv" />
+                                </div>
                             </div>
                         </div>
-                        
+
                         <div class="titlebar">
                             <h1></h1>
                             <button>Save Changes</button>

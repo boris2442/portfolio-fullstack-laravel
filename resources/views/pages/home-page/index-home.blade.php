@@ -55,7 +55,7 @@
                                 <a href="https://www.dribbble.com" target="_blank" class="home_social-icon">
                                     <i class="uil uil-dribbble"></i>
                                 </a>
-                                <a href="https://www.github.com" target="_blank" class="home_social-icon">
+                                <a href="https://www.github.com/boris2442" target="_blank" class="home_social-icon">
                                     <i class="uil uil-github-alt"></i>
                                 </a>
                             </div>
@@ -572,7 +572,7 @@
                 <div class="swiper-wrapper">
                     <!--============ PORTFOLIO 1 ==============-->
                     <div class="portfolio_content grid swiper-slide">
-                        <img src="../../template/assets/img/portfolio1.jpeg" alt="" class="portfolio_img">
+                        <img src="{{asset('template/assets/img/portfolio1.jpeg')}}" alt="" class="portfolio_img">
 
                         <div class="portfolio_data">
                             <h3 class="portfolio_title">Modern Website</h3>
@@ -588,7 +588,7 @@
                     </div>
                     <!--============ PORTFOLIO 2 ==============-->
                     <div class="portfolio_content grid swiper-slide">
-                        <img src="../../template/assets/img/portfolio2.jpeg" alt="" class="portfolio_img">
+                        <img src="{{ asset('template/assets/img/portfolio2.jpeg') }}" alt="" class="portfolio_img">
 
                         <div class="portfolio_data">
                             <h3 class="portfolio_title">POS App</h3>
@@ -603,7 +603,7 @@
                     </div>
                     <!--============ PORTFOLIO 3 ==============-->
                     <div class="portfolio_content grid swiper-slide">
-                        <img src="../../template/assets/img/portfolio3.jpeg" alt="" class="portfolio_img">
+                        <img src="{{asset('template/assets/img/portfolio3.jpeg')}}" alt="" class="portfolio_img">
 
                         <div class="portfolio_data">
                             <h3 class="portfolio_title">Online Store</h3>
@@ -644,7 +644,7 @@
                         </a>
                     </div>
 
-                    <img src="../../template/assets/img/home.png" alt="" class="project_img">
+                    <img src="{{asset('template/assets/img/home.png')}}" alt="" class="project_img">
                 </div>
             </div>
         </section>
@@ -660,7 +660,7 @@
                     <div class="testimonial_content swiper-slide">
                         <div class="testimonial_data">
                             <div class="testimonial_header">
-                                <img src="../../template/assets/img/testimonial1.jpeg" alt=""
+                                <img src="{{asset('template/assets/img/testimonial1.jpeg')}}" alt=""
                                     class="testimonial_img">
 
                                 <div>
@@ -686,7 +686,7 @@
                     <div class="testimonial_content swiper-slide">
                         <div class="testimonial_data">
                             <div class="testimonial_header">
-                                <img src="../../template/assets/img/testimonial2.jpg" alt=""
+                                <img src="{{asset('template/assets/img/testimonial2.jpg')}}" alt=""
                                     class="testimonial_img">
 
                                 <div>
@@ -712,7 +712,7 @@
                     <div class="testimonial_content swiper-slide">
                         <div class="testimonial_data">
                             <div class="testimonial_header">
-                                <img src="../../template/assets/img/testimonial3.jpeg" alt=""
+                                <img src="{{asset('template/assets/img/testimonial3.jpeg')}}" alt=""
                                     class="testimonial_img">
 
                                 <div>
