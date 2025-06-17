@@ -10,8 +10,9 @@ class MediaController extends Controller
 {
     //
 
-    public function index(){
-        $medias=Media::latest()->get();
+    public function index()
+    {
+        $medias = Media::latest()->get();
 
         return view('admin.medias.index-medias', compact('medias'));
     }

@@ -14,6 +14,7 @@ Route::get('/admin/about', [AboutController::class, 'edit'])->name('edit-about')
 
 Route::patch('/admin/about', [AboutController::class, 'update'])->name('update-about');
 Route::get('/admin/medias', [MediaController::class, 'index'])->name('index-medias');
+Route::post('/admin/medias', [MediaController::class, 'store'])->name('index-medias-store') ;
 Route::get('/{any}', function(){
     return view('pageNotFound');
 })->where('any', '.*');
