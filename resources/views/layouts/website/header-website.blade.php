@@ -3,7 +3,8 @@
    <header class="header" id="header">
         <nav class="nav container">
             <a href="#home" class="nav_logo">
-            {{ $about->name }}
+            {{-- {{ $about->name }} --}}
+            Logo website
             </a>
 
             <div class="nav_menu" id="nav-menu">
