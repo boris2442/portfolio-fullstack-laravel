@@ -1,20 +1,21 @@
 @extends('layouts.website.layout-website')
 @section('content')
- <!--==================== MAIN ====================-->
+    <!--==================== MAIN ====================-->
     <main class="main">
         <!--==================== HOME ====================-->
         <section class="home section" id="home">
             <div class="home_container container grid">
                 <div class="home_img">
                     {{-- <img src="../../template/assets/img/home.png" alt=""> --}}
-                    <img src="{{ isset($about->banner_image) ? asset('storage/images/' . $about->banner_image) : asset('storage/images/no-image.png') }}" alt="">
+                    <img src="{{ isset($about->banner_image) ? asset('storage/images/' . $about->banner_image) : asset('storage/images/no-image.png') }}"
+                        alt="">
                 </div>
 
                 <div class="home_data">
-                    <h1 class="home_title">Hi, I'am {{$about->name}}</h1>
-                    <h3 class="home_subtitle">{{$about->tagline}}</h3>
+                    <h1 class="home_title">Hi, I'am {{ $about->name }}</h1>
+                    <h3 class="home_subtitle">{{ $about->tagline }}</h3>
                     <p class="home_description">
-                       {{ $about->summary }}
+                        {{ $about->summary }}
                     </p>
                     <a href="#contact" class="button button--flex">
                         Contact Me <i class="uil uil-message button__icon"></i>
@@ -74,7 +75,8 @@
 
             <div class="about_container container grid">
                 {{-- <img src="../../template/assets/img/about-img.png" alt="" class="about_img"> --}}
-                <img src="{{ isset($about->home_image) ? asset('storage/images/' . $about->home_image) : asset('storage/images/no-image.png') }}" alt="" class="about_img">
+                <img src="{{ isset($about->home_image) ? asset('storage/images/' . $about->home_image) : asset('storage/images/no-image.png') }}"
+                    alt="" class="about_img">
 
                 <div class="about_data">
                     <p class="about_description">
@@ -572,7 +574,8 @@
                 <div class="swiper-wrapper">
                     <!--============ PORTFOLIO 1 ==============-->
                     <div class="portfolio_content grid swiper-slide">
-                        <img src="{{asset('template/assets/img/portfolio1.jpeg')}}" alt="" class="portfolio_img">
+                        <img src="{{ asset('template/assets/img/portfolio1.jpeg') }}" alt=""
+                            class="portfolio_img">
 
                         <div class="portfolio_data">
                             <h3 class="portfolio_title">Modern Website</h3>
@@ -588,7 +591,8 @@
                     </div>
                     <!--============ PORTFOLIO 2 ==============-->
                     <div class="portfolio_content grid swiper-slide">
-                        <img src="{{ asset('template/assets/img/portfolio2.jpeg') }}" alt="" class="portfolio_img">
+                        <img src="{{ asset('template/assets/img/portfolio2.jpeg') }}" alt=""
+                            class="portfolio_img">
 
                         <div class="portfolio_data">
                             <h3 class="portfolio_title">POS App</h3>
@@ -603,7 +607,8 @@
                     </div>
                     <!--============ PORTFOLIO 3 ==============-->
                     <div class="portfolio_content grid swiper-slide">
-                        <img src="{{asset('template/assets/img/portfolio3.jpeg')}}" alt="" class="portfolio_img">
+                        <img src="{{ asset('template/assets/img/portfolio3.jpeg') }}" alt=""
+                            class="portfolio_img">
 
                         <div class="portfolio_data">
                             <h3 class="portfolio_title">Online Store</h3>
@@ -644,7 +649,7 @@
                         </a>
                     </div>
 
-                    <img src="{{asset('template/assets/img/home.png')}}" alt="" class="project_img">
+                    <img src="{{ asset('template/assets/img/home.png') }}" alt="" class="project_img">
                 </div>
             </div>
         </section>
@@ -660,7 +665,7 @@
                     <div class="testimonial_content swiper-slide">
                         <div class="testimonial_data">
                             <div class="testimonial_header">
-                                <img src="{{asset('template/assets/img/testimonial1.jpeg')}}" alt=""
+                                <img src="{{ asset('template/assets/img/testimonial1.jpeg') }}" alt=""
                                     class="testimonial_img">
 
                                 <div>
@@ -686,11 +691,11 @@
                     <div class="testimonial_content swiper-slide">
                         <div class="testimonial_data">
                             <div class="testimonial_header">
-                                <img src="{{asset('template/assets/img/testimonial2.jpg')}}" alt=""
+                                <img src="{{ asset('template/assets/img/testimonial2.jpg') }}" alt=""
                                     class="testimonial_img">
 
                                 <div>
-                                    <h3 class="testimonial_name">{{$about->name}}</h3>
+                                    <h3 class="testimonial_name">{{ $about->name }}</h3>
                                     <span class="testimonial_client">Client</span>
                                 </div>
                             </div>
@@ -712,7 +717,7 @@
                     <div class="testimonial_content swiper-slide">
                         <div class="testimonial_data">
                             <div class="testimonial_header">
-                                <img src="{{asset('template/assets/img/testimonial3.jpeg')}}" alt=""
+                                <img src="{{ asset('template/assets/img/testimonial3.jpeg') }}" alt=""
                                     class="testimonial_img">
 
                                 <div>
@@ -753,7 +758,7 @@
 
                         <div>
                             <h3 class="contact_title">Call Me</h3>
-                            <span class="contact_subtitle">{{$about->phone}}</span>
+                            <span class="contact_subtitle">{{ $about->phone }}</span>
                         </div>
                     </div>
                     <div class="contact_information">
@@ -761,7 +766,7 @@
 
                         <div>
                             <h3 class="contact_title">Email</h3>
-                            <span class="contact_subtitle">{{$about->email}}</span>
+                            <span class="contact_subtitle">{{ $about->email }}</span>
                         </div>
                     </div>
                     <div class="contact_information">
@@ -769,7 +774,7 @@
 
                         <div>
                             <h3 class="contact_title">Location</h3>
-                            <span class="contact_subtitle">{{$about->adress}}</span>
+                            <span class="contact_subtitle">{{ $about->adress }}</span>
                         </div>
                     </div>
                 </div>

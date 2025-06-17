@@ -33,6 +33,14 @@
                             </a>
                         </li>
                         <li>
+                            <a
+                            class="{{ (request()->is('/admin/medias'))?'nav-active' :'' }}"
+                            href="{{ route('index-medias') }}">
+                                <span><i class="fas fa-microphone"> </i></span>
+                                <span> Medias</span>
+                            </a>
+                        </li>
+                        <li>
                             <a  href="">
                                 <span><i class="fas fa-concierge-bell"> </i></span>
                                 <span>Services</span>
@@ -96,4 +104,4 @@
 
             </div>
         </nav>
-    </aside>
+ </aside>
