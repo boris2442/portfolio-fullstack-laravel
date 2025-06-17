@@ -15,6 +15,7 @@ Route::get('/admin/about', [AboutController::class, 'edit'])->name('edit-about')
 Route::patch('/admin/about', [AboutController::class, 'update'])->name('update-about');
 Route::get('/admin/medias', [MediaController::class, 'index'])->name('index-medias');
 Route::post('/admin/medias', [MediaController::class, 'store'])->name('store-medias') ;
+Route::delete('/admin/medias/{id}', [MediaController::class, 'destroy'])->name('destroy.medias');
 Route::get('/{any}', function(){
     return view('pageNotFound');
 })->where('any', '.*');

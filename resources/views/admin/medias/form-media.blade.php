@@ -9,7 +9,7 @@
             @enderror
         </div>
         <div class="">
-            <span style="color:#006fbb;">(Find your icon class: Font Awesome)</span>
+            <p style="color:#006fbb;">(Find your icon class: Font Awesome)</p>
             @error('icon')
                 <span class='text-red-400'>{{ $message }}</span>
             @enderror

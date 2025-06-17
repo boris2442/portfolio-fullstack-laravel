@@ -39,4 +39,10 @@ class MediaController extends Controller
             ->route('index-medias')
             ->with('success', 'Another medias create with success');
     }
+
+    public function destroy($id){
+        $media=Media::findOrFail($id);
+        $media->delete();
+        return redirect()->route('index-medias')->with('success', 'link destroy with success');
+    }
 }
