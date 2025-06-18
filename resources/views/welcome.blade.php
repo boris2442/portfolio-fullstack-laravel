@@ -37,7 +37,7 @@
             <div class="nav_menu" id="nav-menu">
                 <ul class="nav_list">
                     <li class="nav-item">
-                        <a href="#home" class="nav_link active_link">Home</a>
+                        <a href="#home" class="nav_link active_link">Dashboard</a>
                     </li>
                     <li class="nav-item">
                         <a href="#about" class="nav_link">About</a>
@@ -78,7 +78,7 @@
         <section class="home section" id="home">
             <div class="home_container container grid">
                 <div class="home_img">
-                    <img src="../../template/assets/img/home.png" alt="">
+                    <img src="../../template/assets/img/dashboard.png" alt="">
                 </div>
 
                 <div class="home_data">
@@ -715,7 +715,7 @@
                         </a>
                     </div>
 
-                    <img src="../../template/assets/img/home.png" alt="" class="project_img">
+                    <img src="../../template/assets/img/dashboard.png" alt="" class="project_img">
                 </div>
             </div>
         </section>

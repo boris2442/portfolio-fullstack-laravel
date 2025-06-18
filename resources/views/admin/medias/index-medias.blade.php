@@ -15,8 +15,9 @@
             <h2>Social media</h2>
             <div class="social_table-heading">
                 <p>Link</p>
-                <p>Icon</p>
-                <p></p>
+                <p>Icon </p>
+                {{-- <p>Update</p> --}}
+                <p>Delete</p>
             </div>
             <!-- item 1 -->
             @foreach ($medias as $media)
@@ -25,14 +26,12 @@
                     <button class="service_table-icon">
                         <i class=" {{ $media->icon }}"></i>
                     </button>
-                    {{-- <button class="danger">
-                        delete
-                    </button> --}}
+
 
                     <form method='post' action="{{ route('destroy.medias', $media->id) }}">
                         @csrf
                         @method('DELETE')
-                        <button class="px-5 py-2 bg-red-500 rounded-md text-white text-lg shadow-md" type="submit"
+                        <button class="danger" type="submit"
                             onClick="return confirm('Are you sure you to delete this media?')">Delete</button>
                     </form>
                 </div>
