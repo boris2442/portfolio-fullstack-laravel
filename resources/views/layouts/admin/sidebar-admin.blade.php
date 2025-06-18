@@ -41,7 +41,7 @@
                             </a>
                         </li>
                         <li>
-                            <a  href="">
+                            <a  href="{{route('service.index')}}">
                                 <span><i class="fas fa-concierge-bell"> </i></span>
                                 <span>Services</span>
                             </a>

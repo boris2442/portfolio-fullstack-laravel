@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\MediaController;
+use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\DashboardController;
 
 
@@ -19,14 +20,13 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin/medias', [MediaController::class, 'index'])->name('index-medias');
     Route::post('/admin/medias', [MediaController::class, 'store'])->name('store-medias');
     Route::delete('/admin/medias/{id}', [MediaController::class, 'destroy'])->name('destroy.medias');
+    Route::get('/admin/service', [ServiceController::class, 'index'])->name('service.index');
 });
 
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
-
-
 
 
 Route::middleware('auth')->group(function () {
