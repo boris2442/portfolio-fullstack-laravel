@@ -20,6 +20,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin/medias', [MediaController::class, 'index'])->name('index-medias');
     Route::post('/admin/medias', [MediaController::class, 'store'])->name('store-medias');
     Route::delete('/admin/medias/{id}', [MediaController::class, 'destroy'])->name('destroy.medias');
+    Route::delete('/admin/service/{id}', [ServiceController::class, 'destroy'])->name('destroy.service');
     Route::get('/admin/service', [ServiceController::class, 'index'])->name('service.index');
 });
 

@@ -1,7 +1,6 @@
 @extends('layouts.admin.layout-admin')
 @section('content')
-
- <main>
+    <main>
 
         <!--==================== SERVICES ====================-->
         <section class="services" id="services">
@@ -36,42 +35,53 @@
                     <p>Actions</p>
                 </div>
                 <!-- item 1 -->
-                <div class="service_table-items">
-                    <p>Backend Developer</p>
-                    <button class="service_table-icon">
-                        <i class=" fas fa-pencil-alt"></i>
-                    </button>
-                    <p>Sapiente odit ut ipsam neque dolorum et. Officiis error dicta pariatur quidem. Saepe dignissimos
-                        et at error dolores asperiores. Earum id sed ratione ducimus enim voluptate praesentium.
-                    </p>
-                    <div>
-                        <button class="btn-icon success">
+                @foreach ($services as $service)
+                    <div class="service_table-items">
+                        <p>{{ $service->title }}</p>
+                        <button class="service_table-icon">
+                            <i class="{{ $service->icon }}"></i>
+                        </button>
+                        <p>{{ $service->description }}
+                        </p>
+                        <div>
+                            {{-- <button class="btn-icon success">
                             <i class="fas fa-pencil-alt"></i>
-                        </button>
-                        <button class="btn-icon danger">
-                            <i class="far fa-trash-alt"></i>
-                        </button>
+                        </button> --}}
+                            <form method='post' action="{{ route('destroy.service', $service->id) }}">
+                                @csrf
+                                @method('DELETE')
+                                <button class="danger" type="submit"
+                                    onClick="return confirm('Are you sure you to delete this services?')"> <i
+                                        class=" far fa-trash-alt"></i>
+                                </button>
+                            </form>
+                            <button class="btn-icon danger">
+                                <i class="fas fa-pencil-alt  "></i>
+                            </button>
+                        </div>
                     </div>
-                </div>
-                <!-- item 2 -->
-                <div class="service_table-items">
-                    <p>Backend Developer</p>
-                    <button class="service_table-icon">
-                        <i class=" fas fa-pencil-alt"></i>
-                    </button>
-                    <p>Sapiente odit ut ipsam neque dolorum et. Officiis error dicta pariatur quidem. Saepe dignissimos
-                        et at error dolores asperiores. Earum id sed ratione ducimus enim voluptate praesentium.
-                    </p>
-                    <div>
-                        <button class="btn-icon success">
-                            <i class="fas fa-pencil-alt"></i>
-                        </button>
-                        <button class="btn-icon danger">
-                            <i class="far fa-trash-alt"></i>
-                        </button>
-                    </div>
-                </div>
+                @endforeach
 
+
+                <!-- item 2 -->
+                {{-- <div class="service_table-items">
+                    <p>Backend Developer</p>
+                    <button class="service_table-icon">
+                        <i class=" fas fa-pencil-alt"></i>
+                    </button>
+                    <p>Sapiente odit ut ipsam neque dolorum et. Officiis error dicta pariatur quidem. Saepe dignissimos
+                        et at error dolores asperiores. Earum id sed ratione ducimus enim voluptate praesentium.
+                    </p>
+                    <div>
+                        <button class="btn-icon success">
+                            <i class="fas fa-pencil-alt"></i>
+                        </button>
+                        <button class="btn-icon danger">
+                            <i class="far fa-trash-alt"></i>
+                        </button>
+                    </div>
+                </div>
+        --}}
             </div>
 
             <!-------------- SERVICES MODAL --------------->
@@ -112,38 +122,32 @@
                         <span v-if="editMode">Edit </span>
                         <span v-else>Create </span> Service
                     </h2>
-                    <span
-                     {{-- @click="closeModal" --}}
-                     >×</span>
+                    <span {{-- @click="closeModal" --}}>×</span>
                     <hr>
                     <div>
                         <label>Service Name</label>
                         <small style="color: red" v-if="errors.name"><span>
-                            {{-- {{errors.name}} --}}
-                        </span></small>
+                                {{-- {{errors.name}} --}}
+                            </span></small>
                         <input type="text" v-model="form.name" />
 
                         <label>Icon Class <span style="color:#006fbb;">(Find your suitable icon: Font
                                 Awesome)</span></label>
                         <small style="color: red" v-if="errors.icon"><span>
-                            {{-- {{errors.icon}} --}}
-                        </span></small>
+                                {{-- {{errors.icon}} --}}
+                            </span></small>
                         <input type="text" v-model="form.icon" />
 
                         <label>Description</label>
                         <small style="color: red" v-if="errors.description"><span>
-                            {{-- {{errors.description}} --}}
-                        </span></small>
+                                {{-- {{errors.description}} --}}
+                            </span></small>
                         <textarea cols="10" rows="5" v-model="form.description"></textarea>
                     </div>
                     <hr>
                     <div class="modal-footer">
-                        <button
-                         {{-- @click="closeModal" --}}
-                         >Cancel</button>
-                        <button class="secondary"
-                         {{-- @click="handleSave" --}}
-                         >
+                        <button {{-- @click="closeModal" --}}>Cancel</button>
+                        <button class="secondary" {{-- @click="handleSave" --}}>
                             <span><i class="fa fa-spinner fa-spin" aria-hidden="true" v-if="isSubmit"></i></span>
                             Save
                         </button>
@@ -153,5 +157,5 @@
         </section>
 
     </main>
-    <script src="{{asset('template/assets/js/admin.js')}}"></script>
+    <script src="{{ asset('template/assets/js/admin.js') }}"></script>
 @endsection
