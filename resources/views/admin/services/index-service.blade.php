@@ -4,8 +4,10 @@
 
         <!--==================== SERVICES ====================-->
         <section class="services" id="services">
+
             <div class="titlebar">
                 <h1>Services</h1>
+
                 <button class="open-modal">New Service</button>
             </div>
             <div class="table">
@@ -87,33 +89,39 @@
             <!-------------- SERVICES MODAL --------------->
             <div class="modal ">
                 <div class="modal-content">
-                    <h2>Create Service</h2>
-                    <span class="close-modal">×</span>
-                    <hr>
-                    <div>
-                        <label>Service Name</label>
-                        <input type="text" />
+                    <form method='post' 
+                    {{-- action={{ route('') }} --}}
+                    >
+                        @csrf
+                        <h2>Create Service</h2>
+                        <span class="close-modal">×</span>
+                        <hr>
+                        <div>
+                            <label>Service Name</label>
+                            <input type="text" name='title' />
 
-                        <label>Icon Class <span style="color:#006fbb;">(Find your suitable icon: Font
-                                Awesome)</span></label>
+                            <label>Icon Class <span style="color:#006fbb;">(Find your suitable icon: Font
+                                    Awesome)</span></label>
 
-                        <input type="text" />
+                            <input type="text" name='icon' />
 
-                        <label>Description</label>
-                        <textarea cols="10" rows="5"></textarea>
-                    </div>
-                    <hr>
-                    <div class="modal-footer">
-                        <button class="close-modal">
-                            Cancel
-                        </button>
-                        <button class="secondary close-modal">
-                            <span><i class="fa fa-spinner fa-spin"></i></span>
-                            Save
-                        </button>
-                    </div>
-
+                            <label>Description</label>
+                            <textarea cols="10" rows="5" name='description'></textarea>
+                        </div>
+                        <hr>
+                        <div class="modal-footer">
+                            <button class="close-modal">
+                                Cancel
+                            </button>
+                            <button class="secondary close-modal">
+                                <span><i class="fa fa-spinner fa-spin"></i></span>
+                                Save
+                            </button>
+                        </div>
+                    </form>
                 </div>
+
+            </div>
             </div>
 
             <div class="main-modal " :class="showModal ? 'show' : ''">
