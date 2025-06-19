@@ -11,7 +11,7 @@ use App\Http\Controllers\Admin\DashboardController;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home-page');
-
+// Route::get('/', [HomeController::class, 'affichService'])->name('home-service');
 Route::middleware(['auth', 'admin'])->group(function () {
 
     Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin-dashboard');
