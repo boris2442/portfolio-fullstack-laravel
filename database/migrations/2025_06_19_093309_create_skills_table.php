@@ -14,13 +14,13 @@ return new class extends Migration
         Schema::create('skills', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
+
             $table->foreignId('service_id')
                 ->nullable()
                 ->constrained()
-                ->onDelete('cascade');
-
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
             $table->integer('proficiency')->nullable();
-
             $table->timestamps();
         });
     }
