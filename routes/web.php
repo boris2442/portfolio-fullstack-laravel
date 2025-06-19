@@ -17,23 +17,30 @@ Route::get('/', [HomeController::class, 'index'])->name('home-page');
 Route::middleware(['auth', 'admin'])->group(function () {
 
     Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin-dashboard');
+
+
+    ///Routes crud destinees aux about 
     Route::get('/admin/about', [AboutController::class, 'edit'])->name('edit-about');
     Route::patch('/admin/about', [AboutController::class, 'update'])->name('update-about');
     Route::get('/admin/medias', [MediaController::class, 'index'])->name('index-medias');
     Route::post('/admin/medias', [MediaController::class, 'store'])->name('store-medias');
     Route::delete('/admin/medias/{id}', [MediaController::class, 'destroy'])->name('destroy.medias');
+
+    // Routes destinees aux services
     Route::delete('/admin/service/{id}', [ServiceController::class, 'destroy'])->name('destroy.service');
     Route::get('/admin/service', [ServiceController::class, 'index'])->name('service.index');
     Route::get('/admin/service/create', [ServiceController::class, 'create'])->name('service.create');
-    Route::post('/admin/service/create', [ServiceController::class, 'store'])->name('service.store' );
+    Route::post('/admin/service/create', [ServiceController::class, 'store'])->name('service.store');
+
+    //////////////////////////End services
     Route::get('/admin/skill', [SkillController::class, 'index'])->name('skill.index');
 
-
+    // Routes destinees a l'education
     Route::get('/admin/education', [EducationController::class, 'index'])->name('education.index');
-     Route::delete('/admin/education/{id}', [EducationController::class, 'destroy'])->name('education.destroy');
+    Route::delete('/admin/education/{id}', [EducationController::class, 'destroy'])->name('education.destroy');
 
-       Route::get('/admin/education/create', [EducationController::class, 'create'])->name('education.create');
-    Route::post('/admin/education/create', [EducationController::class, 'store'])->name('education.store' );
+    Route::get('/admin/education/create', [EducationController::class, 'create'])->name('education.create');
+    Route::post('/admin/education/create', [EducationController::class, 'store'])->name('education.store');
 });
 
 

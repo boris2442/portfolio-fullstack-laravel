@@ -29,7 +29,7 @@
                     <div class="home_social">
                         <span class="home_social-follow">Follow Me</span>
                         <div class="home_social-links">
-                            <a href="https://www.linkedin.com" target="_blank" class="home_social-icon">
+                            <a href="https://www.linkedin.com/in/boris-aubin-simo-26b9a0369" target="_blank" class="home_social-icon">
                                 <i class="uil uil-linkedin-alt"></i>
                             </a>
                             <a href="https://www.dribbble.com" target="_blank" class="home_social-icon">
