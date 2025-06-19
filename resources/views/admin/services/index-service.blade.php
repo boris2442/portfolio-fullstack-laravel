@@ -65,51 +65,32 @@
                 @endforeach
 
 
-                <!-- item 2 -->
-                {{-- <div class="service_table-items">
-                    <p>Backend Developer</p>
-                    <button class="service_table-icon">
-                        <i class=" fas fa-pencil-alt"></i>
-                    </button>
-                    <p>Sapiente odit ut ipsam neque dolorum et. Officiis error dicta pariatur quidem. Saepe dignissimos
-                        et at error dolores asperiores. Earum id sed ratione ducimus enim voluptate praesentium.
-                    </p>
-                    <div>
-                        <button class="btn-icon success">
-                            <i class="fas fa-pencil-alt"></i>
-                        </button>
-                        <button class="btn-icon danger">
-                            <i class="far fa-trash-alt"></i>
-                        </button>
-                    </div>
-                </div>
-        --}}
             </div>
 
             <!-------------- SERVICES MODAL --------------->
             <div class="modal ">
                 <div class="modal-content">
-                    <form method='post'  action={{ route('service.store') }}>
+                    <form method='post' action={{ route('service.store') }}>
                         @csrf
                         <h2>Create Service</h2>
                         <span class="close-modal">×</span>
                         <hr>
                         <div>
                             <label>Service Name</label>
-                            <input type="text" name='title' />
+                            <input type="text" name='title' value="{{ old('title') }}" />
                             @error('title')
                                 <span class='text-red-500'>{{ $message }}</span>
-                            @enderror()
+                            @enderror
                             <label>Icon Class <span style="color:#006fbb;">(Find your suitable icon: Font
                                     Awesome)</span></label>
 
-                            <input type="text" name='icon' />
+                            <input type="text" name='icon' value="{{ old('icon') }}" />
                             @error('icon')
                                 <span class='text-red-500'>{{ $message }}</span>
                             @enderror()
 
                             <label>Description</label>
-                            <textarea cols="10" rows="5" name='description'></textarea>
+                            <textarea cols="10" rows="5" name='description'>{{ old('description') }}</textarea>
                             @error('description')
                                 <span class='text-red-500'>{{ $message }}</span>
                             @enderror()

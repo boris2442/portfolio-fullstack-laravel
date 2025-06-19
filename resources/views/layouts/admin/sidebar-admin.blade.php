@@ -47,7 +47,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="skill.html">
+                            <a href="{{ route('skill.index') }}">
                                 <span><i class="fas fa-lightbulb"> </i></span>
                                 <span>Skills</span>
                             </a>
