@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\SkillController;
+use App\Http\Controllers\Admin\EducationController;
 use App\Http\Controllers\Admin\MediaController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\DashboardController;
@@ -26,6 +27,9 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin/service/create', [ServiceController::class, 'create'])->name('service.create');
     Route::post('/admin/service/create', [ServiceController::class, 'store'])->name('service.store' );
     Route::get('/admin/skill', [SkillController::class, 'index'])->name('skill.index');
+
+
+    Route::get('/admin/education', [EducationController::class, 'index'])->name('education.index');
 });
 
 

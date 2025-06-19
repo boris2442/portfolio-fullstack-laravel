@@ -53,7 +53,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="education.html">
+                            <a href="{{route('education.index')}}">
                                 <span><i class="fas fa-graduation-cap"> </i></span>
                                 <span>Educations</span>
                             </a>
