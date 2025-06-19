@@ -22,6 +22,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::delete('/admin/medias/{id}', [MediaController::class, 'destroy'])->name('destroy.medias');
     Route::delete('/admin/service/{id}', [ServiceController::class, 'destroy'])->name('destroy.service');
     Route::get('/admin/service', [ServiceController::class, 'index'])->name('service.index');
+    Route::get('/admin/service/create', [ServiceController::class, 'create'])->name('service.create');
+    Route::post('/admin/service/create', [ServiceController::class, 'store'])->name('service.store' );
 });
 
 

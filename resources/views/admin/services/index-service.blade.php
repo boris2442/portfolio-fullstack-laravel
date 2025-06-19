@@ -89,9 +89,7 @@
             <!-------------- SERVICES MODAL --------------->
             <div class="modal ">
                 <div class="modal-content">
-                    <form method='post' 
-                    {{-- action={{ route('') }} --}}
-                    >
+                    <form method='post'  action={{ route('service.store') }}>
                         @csrf
                         <h2>Create Service</h2>
                         <span class="close-modal">×</span>
@@ -99,21 +97,29 @@
                         <div>
                             <label>Service Name</label>
                             <input type="text" name='title' />
-
+                            @error('title')
+                                <span class='text-red-500'>{{ $message }}</span>
+                            @enderror()
                             <label>Icon Class <span style="color:#006fbb;">(Find your suitable icon: Font
                                     Awesome)</span></label>
 
                             <input type="text" name='icon' />
+                            @error('icon')
+                                <span class='text-red-500'>{{ $message }}</span>
+                            @enderror()
 
                             <label>Description</label>
                             <textarea cols="10" rows="5" name='description'></textarea>
+                            @error('description')
+                                <span class='text-red-500'>{{ $message }}</span>
+                            @enderror()
                         </div>
                         <hr>
                         <div class="modal-footer">
                             <button class="close-modal">
                                 Cancel
                             </button>
-                            <button class="secondary close-modal">
+                            <button class="secondary close-modal" type='submit'>
                                 <span><i class="fa fa-spinner fa-spin"></i></span>
                                 Save
                             </button>
