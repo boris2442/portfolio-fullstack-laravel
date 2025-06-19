@@ -13,11 +13,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-       $this->call(
-        [
-            AboutSeeder::class,
-            MediaSeeder::class
-        ]
+        $this->call(
+            [
+                AboutSeeder::class,
+                MediaSeeder::class
+            ]
         );
     }
 }

@@ -282,8 +282,25 @@
                 <div class="qualification_sections">
                     <!--========== QUALIFICATION CONTENT 1 ==========-->
                     <div class="qualification_content qualification_active" data-content id="education">
+                         @foreach($educations as $education)
+                             <div class="qualification_data">
+                            <div>
+                                <h3 class="qualification_title">{{$education->departement}}</h3>
+                                <span class="qualification_subtitle">{{$education->institution}}</span>
+                                <div class="qualificaation_calender">
+                                    <i class="uil uil-calender-alt"></i>
+                                   {{$education->period}}
+                                </div>
+                            </div>
+                            <div>
+                                <span class="qualification_rounder"></span>
+                                <span class="qualification_line"></span>
+                            </div>
+                        </div>
+
+                        @endforeach 
                         <!--============= QUALIFICATION 1 ===========-->
-                        <div class="qualification_data">
+                        {{-- <div class="qualification_data">
                             <div>
                                 <h3 class="qualification_title">Computer Science</h3>
                                 <span class="qualification_subtitle">Germany-University</span>
@@ -296,9 +313,9 @@
                                 <span class="qualification_rounder"></span>
                                 <span class="qualification_line"></span>
                             </div>
-                        </div>
+                        </div> --}}
                         <!--============= QUALIFICATION 2 ===========-->
-                        <div class="qualification_data">
+                        {{-- <div class="qualification_data">
                             <div></div>
 
                             <div>
@@ -315,9 +332,9 @@
                                 </div>
                             </div>
 
-                        </div>
+                        </div> --}}
                         <!--============= QUALIFICATION 3 ===========-->
-                        <div class="qualification_data">
+                        {{-- <div class="qualification_data">
                             <div>
                                 <h3 class="qualification_title">Web Development</h3>
                                 <span class="qualification_subtitle">Germany-Institute</span>
@@ -330,9 +347,9 @@
                                 <span class="qualification_rounder"></span>
                                 <span class="qualification_line"></span>
                             </div>
-                        </div>
+                        </div> --}}
                         <!--============= QUALIFICATION 4 ===========-->
-                        <div class="qualification_data">
+                        {{-- <div class="qualification_data">
                             <div></div>
 
                             <div>
@@ -349,7 +366,8 @@
                                 </div>
                             </div>
 
-                        </div>
+                        </div> --}}
+
                     </div>
                     <!--========== QUALIFICATION CONTENT 2 ==========-->
                     <div class="qualification_content" data-content id="work">

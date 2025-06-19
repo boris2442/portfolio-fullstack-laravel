@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('period')->nullable();
             $table->string('degree')->nullable();
             $table->string('departement')->nullable();
-            $table->timestamps();
+    
 
             $table->timestamps();
         });

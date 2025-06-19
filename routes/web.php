@@ -30,6 +30,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
 
     Route::get('/admin/education', [EducationController::class, 'index'])->name('education.index');
+     Route::delete('/admin/education/{id}', [EducationController::class, 'destroy'])->name('education.destroy');
 });
 
 
