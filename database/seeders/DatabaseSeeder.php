@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
             [
                 AboutSeeder::class,
                 MediaSeeder::class,
-                ServiceSeeder::class
+                ServiceSeeder::class,
+                SkillSeeder::class
 
             ]
         );

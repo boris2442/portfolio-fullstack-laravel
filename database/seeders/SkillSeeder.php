@@ -17,24 +17,24 @@ class SkillSeeder extends Seeder
         DB::table('skills')->insert(
             [
                 [
-                    "name" => "PHP",
-                    "proficiency" => "90",
-                    "service_id" => "2"
+                    "name" => "Java",
+                    "proficiency" => "10",
+                    "service_id" => "16"
                 ],
                 [
-                    "name" => "PHP",
-                    "proficiency" => "90",
+                    "name" => "Pwordpress",
+                    "proficiency" => "20",
                     "service_id" => "3"
                 ],
                 [
                     "name" => "PHP",
                     "proficiency" => "90",
-                    "service_id" => "4"
+                    "service_id" => "8"
                 ],
                 [
                     "name" => "PHP",
-                    "proficiency" => "90",
-                    "service_id" => "5"
+                    "proficiency" => "9",
+                    "service_id" => "14"
                 ],
                 [
                     "name" => "PHP",
