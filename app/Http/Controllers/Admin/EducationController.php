@@ -20,4 +20,25 @@ class EducationController extends Controller
         $service->delete();
         return redirect()->route('education.index')->with('success', 'education destroy with success');
     }
+
+
+        public function create()
+    {
+        return view('admin.education.index-education');
+    }
+    public function store(Request $request)
+    {
+        $validate = $request->validate(
+            [
+                "institution" => "required|string|max:244",
+                "period" => "required|string|max:244|",
+                "degree" => "required|string|max:255",
+                "departement" => "required|string|max:244|",
+            ]
+        );
+        Education::create($validate);
+        return redirect()->route('education.index')->with('success', 'education create with successfull');
+    }
+
+
 }

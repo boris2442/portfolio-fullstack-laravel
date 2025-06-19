@@ -64,22 +64,25 @@
             </div>
             <!-------------- EDUCATION MODAL --------------->
             <div class="modal">
+                <form method='POST' action="{{ route('education.store') }}"
+                >
+                @csrf
                 <div class="modal-content">
                     <h2>Create Education</h2>
                     <span class="close-modal">×</span>
                     <hr>
                     <div>
                         <label>Institution</label>
-                        <input type="text" />
+                        <input type="text"  name="institution"/>
 
                         <label>Period</label>
-                        <input type="text" />
+                        <input type="text"  name="period"/>
 
                         <label>Degree</label>
-                        <input type="text" />
+                        <input type="text" name="degree"/>
 
                         <label>Department</label>
-                        <input type="text" />
+                        <input type="text" name="departement" />
                     </div>
                     <hr>
                     <div class="modal-footer">
@@ -92,6 +95,7 @@
                         </button>
                     </div>
                 </div>
+                </form>
             </div>
         </section>
 

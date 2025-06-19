@@ -31,6 +31,9 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
     Route::get('/admin/education', [EducationController::class, 'index'])->name('education.index');
      Route::delete('/admin/education/{id}', [EducationController::class, 'destroy'])->name('education.destroy');
+
+       Route::get('/admin/education/create', [EducationController::class, 'create'])->name('education.create');
+    Route::post('/admin/education/create', [EducationController::class, 'store'])->name('education.store' );
 });
 
 
