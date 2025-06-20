@@ -65,13 +65,13 @@
                             </a>
                         </li>
                         <li>
-                            <a  href="project.html">
+                            <a  href="{{ route('project.index') }}">
                                 <span><i class="fas fa-tasks"> </i></span>
                                 <span>Projects</span>
                             </a>
                         </li>
                         <li>
-                            <a  href="testimonial.html">
+                            <a  href="{{ route('testimonial.index') }}">
                                 <span><i class="fas fa-comment-dots"> </i></span>
                                 <span>Testimonials</span>
                             </a>

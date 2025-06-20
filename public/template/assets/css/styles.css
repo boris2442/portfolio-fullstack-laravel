@@ -1014,12 +1014,14 @@ img {
 .contact_input{
   width: 100%;
   background-color: var(--input-color);
+  /* background-color: #262F40 !important; */
   color: var(--text-color);
   font-family: var(--body-color);
   font-size: var(--normal-font-size);
   border: none;
   outline: none;
   padding: .25rem .5rem .5rem 0;
+  outline: none !important;
 }
 
 /*==================== FOOTER ====================*/

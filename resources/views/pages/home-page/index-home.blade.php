@@ -814,7 +814,7 @@
                     <div class="contact_inputs grid">
                         <div class="contact_content">
                             <label for="" class="contact_label">Name</label>
-                            <input type="text" class="contact_input">
+                            <input type="text" class="contact_input ">
                         </div>
                         <div class="contact_content">
                             <label for="" class="contact_label">Email</label>
