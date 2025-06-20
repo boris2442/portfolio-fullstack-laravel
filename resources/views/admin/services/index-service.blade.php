@@ -20,16 +20,25 @@
                         </ul>
                     </div>
                 </div>
-                <div class="table-search">
-                    <div>
-                        <select class="search-select" name="" id="">
-                            <option value="">Filter Service</option>
-                        </select>
+                <form action="{{ route('service.index') }}" method="get">
+                    <div class="table-search">
+                        <div>
+                            <select class="search-select " name="" id="">
+                                <option value="">Filter Service</option>
+                            </select>
+                        </div>
+                        <div class="flex gap-5 ml-2 relative">
+
+                            <input class="" type="text" name="name"
+                                placeholder="Rechercher le titre de service..." value="">
+                            <button class="min-w-30 h-12 ">Recherche</button>
+                            <a href="{{ route('service.index') }}">
+                                <button class="min-w-30 h-12">Réinitialiser</button>
+                            </a>
+                        </div>
+
                     </div>
-                    <div class="relative">
-                        <input class="search-input" type="text" name="search" placeholder="Search Service...">
-                    </div>
-                </div>
+                </form>
                 <div class="service_table-heading">
                     <p>Title</p>
                     <p>Icon</p>
