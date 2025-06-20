@@ -33,12 +33,12 @@
                                 placeholder="Rechercher le titre de service..." value="{{ Request::get('title') }}">
                             <button class="min-w-30 h-12 ">Recherche</button>
                             <div class="flex">
-                            <a href="{{ route('service.index') }}" class="min-w-30 h-12">
-                         
+                                <a href="{{ route('service.index') }}" class="min-w-30 h-12">
+
                                     <i class="fas fa-redo text-3xl"></i>
-                                  
-                              
-                            </a>
+
+
+                                </a>
                             </div>
                         </div>
 
