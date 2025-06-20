@@ -1,4 +1,5 @@
 @extends('layouts.admin.layout-admin')
+@section('title', 'index education dashboard')
 @section('content')
     <main class=''>
 

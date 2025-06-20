@@ -1,4 +1,5 @@
 @extends('layouts.admin.layout-admin')
+@section('title', 'index medias dashboard')
 @section('content')
     <main>
         {{-- @dump($medias); --}}

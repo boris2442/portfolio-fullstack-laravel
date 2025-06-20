@@ -1,16 +1,17 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\AboutController;
-use App\Http\Controllers\Admin\SkillController;
-use App\Http\Controllers\Admin\EducationController;
 use App\Http\Controllers\Admin\MediaController;
+use App\Http\Controllers\Admin\SkillController;
+use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\EducationController;
+use App\Http\Controllers\Admin\ExperienceController;
 use App\Http\Controllers\Admin\TestimonialController;
-use App\Http\Controllers\Admin\ProjectController;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home-page');
@@ -47,19 +48,25 @@ Route::middleware(['auth', 'admin'])->group(function () {
     //Route destinees a testimonial dashboard
     Route::get('/admin/testimonial', [TestimonialController::class, 'index'])->name('testimonial.index');
     //Route::get('/admin/testimonial/create', [TestimonialController::class, 'create'])->name('testimonial.create');
-   // Route::post('/admin/testimonial/create', [TestimonialController::class, 'store'])->name('testimonial.store');
-   // Route::delete('/admin/testimonial/{id}', [TestimonialController::class, 'destroy'])->name('testimonial.destroy');
+    // Route::post('/admin/testimonial/create', [TestimonialController::class, 'store'])->name('testimonial.store');
+    // Route::delete('/admin/testimonial/{id}', [TestimonialController::class, 'destroy'])->name('testimonial.destroy');
     //Route::get('/admin/testimonial/edit/{id}', [TestimonialController::class, 'edit'])->name('testimonial.edit');
 
-//Route destinnees aux project
- Route::get('/admin/project', [ProjectController::class, 'index'])->name('project.index');
+    //Route destinnees aux project
+    Route::get('/admin/project', [ProjectController::class, 'index'])->name('project.index');
     Route::get('/admin/project/create', [ProjectController::class, 'create'])->name('project.create');
     Route::post('/admin/project/create', [ProjectController::class, 'store'])->name('project.store');
     Route::delete('/admin/project/{id}', [ProjectController::class, 'destroy'])->name('project.destroy');
     Route::get('/admin/project/edit/{id}', [ProjectController::class, 'edit'])->name('project.edit');
     Route::patch('/admin/project/edit/{id}', [ProjectController::class, 'update'])->name('project.update');
 
-
+    //Route destines aux experience
+    Route::get('/admin/experience', [ExperienceController::class, 'index'])->name('experience.index');
+    Route::get('/admin/experience/create', [ExperienceController::class, 'create'])->name('experience.create');
+    Route::post('/admin/experience/create', [ExperienceController::class, 'store'])->name('experience.store');
+    Route::delete('/admin/project/{id}', [ExperienceController::class, 'destroy'])->name('project.destroy');
+    Route::get('/admin/project/edit/{id}', [ExperienceController::class, 'edit'])->name('project.edit');
+    Route::patch('/admin/project/edit/{id}', [ExperienceController::class, 'update'])->name('project.update');
 });
 
 

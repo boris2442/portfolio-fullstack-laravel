@@ -59,7 +59,7 @@
                             </a>
                         </li>
                         <li>
-                            <a  href="experience.html">
+                            <a  href="{{ route('experience.index') }}">
                                 <span><i class="fas fa-briefcase"> </i></span>
                                 <span>Experiences</span>
                             </a>

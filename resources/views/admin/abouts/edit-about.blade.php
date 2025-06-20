@@ -1,4 +1,5 @@
 @extends('layouts.admin.layout-admin')
+@section('title', 'editer about dashboard')
 @section('content')
     <main>
         <!--==================== ABOUT ====================-->

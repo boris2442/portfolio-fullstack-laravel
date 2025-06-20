@@ -1,4 +1,5 @@
 @extends('layouts.admin.layout-admin')
+@section('title', 'index services dashboard')
 @section('content')
     <main>
 
