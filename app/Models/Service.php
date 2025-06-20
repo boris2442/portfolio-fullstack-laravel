@@ -11,16 +11,17 @@ class Service extends Model
 {
     //
     protected  $guarded = [];
+    public static function filter(Request $request)
+    {
+        $query = self::query(); //lorsque la methode est statique
+        if ($request->filled('title')) { //verifie si le tit
+            $query->where('title', 'like', '%' . $request->input('title') . '%');
+        }
+        return $query; //retourne les resultats de la requete
+    }
     public function skills(): HasMany
     {
         return $this->hasMany(Skill::class);
     }
-    public static function filter(Request $request)
-    {
-        $query = self::query(); //lorsque la methode est statique
-        if ($query->filled('title')) { //verifie si le tit
-            $query->where('title', 'like', '%' . $request->input('title') . '%');
-        }
-        return $query->get(); //retourne les resultats de la requete
-    }
+    
 }

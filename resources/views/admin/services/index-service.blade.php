@@ -29,8 +29,8 @@
                         </div>
                         <div class="flex gap-5 ml-2 relative">
 
-                            <input class="" type="text" name="name"
-                                placeholder="Rechercher le titre de service..." value="">
+                            <input class="" type="text" name="title" id="title"
+                                placeholder="Rechercher le titre de service..." value="{{ Request::get('title') }}">
                             <button class="min-w-30 h-12 ">Recherche</button>
                             <a href="{{ route('service.index') }}">
                                 <button class="min-w-30 h-12">Réinitialiser</button>
@@ -75,7 +75,10 @@
 
 
             </div>
+            {{-- // Pagination --}}
+            {{-- paginate --}}
 
+            {{-- {{ $services->links}} --}}
             <!-------------- SERVICES MODAL --------------->
             <div class="modal ">
                 <div class="modal-content">
