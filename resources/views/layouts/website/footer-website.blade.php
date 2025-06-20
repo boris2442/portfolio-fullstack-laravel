@@ -22,6 +22,18 @@
                  <li>
                      <a href="#contact" class="footer_link">Cantact Me</a>
                  </li>
+
+                 @if (Auth::check() && auth()->user()->role === 'admin')
+                 <li>   <a href="{{ route('admin-dashboard') }}" class="text-white">Admin Dashboard</a></li>
+                  
+                 @else
+                 <li>   <a href="{{ route('login') }}" class="text-white">Se connecter</a></li>
+                  
+                 @endif
+
+
+
+
              </ul>
              <div class="footer_socails">
                  <a href="https://www.linkedin.com/in/boris-aubin-simo-26b9a0369" target="_blank" class="footer_social">
@@ -31,19 +43,13 @@
                      <i class="uil uil-github-alt"></i>
                  </a>
                  <a href="https://www.twitter.com" class="footer_social">
-                     <i class="uil uil-twitter-alt"></i>
+                     {{-- <i class="uil uil-twitter-alt"></i> --}}
+                     <i class="uil uil-codepen"></i>
+
                  </a>
              </div>
          </div>
          <p class="footer_copy text-white">&#169; Share Tutorials. All right reserved</p>
-         <div class="h-5 w-full bg-green-800 text-center p-5">
-             @if (Auth::check() && auth()->user()->role === 'admin')
-                 <a href="{{ route('admin-dashboard') }}" class="text-white">Admin Dashboard</a>
-             @else
-                 <a href="{{ route('login') }}" class="text-white">Se connecter</a>
-             @endif
-
-
-         </div>
+    
      </div>
  </footer>
