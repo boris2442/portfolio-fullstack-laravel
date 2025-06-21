@@ -1,10 +1,7 @@
 @extends('layouts.admin.admin-layout');
 @section('title', 'seeting du dashboard')
 @section('content')
-
-
     <main>
-
         <!--==================== SETTING ====================-->
         <section class="setting" id="setting">
             <div class="setting-wrapper">

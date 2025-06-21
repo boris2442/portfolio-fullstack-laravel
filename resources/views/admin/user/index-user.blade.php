@@ -1,4 +1,5 @@
 @extends('layouts.admin.layout-admin')
+@section('title', 'index user dashboard')
 @section('content')
   <main>
      
@@ -95,5 +96,5 @@
             </div>
         </div>
     </main>
-    <script src="{{asset('template/assets/js/admin.js'}}"></script>
+    <script src="{{asset('template/assets/js/admin.js')}}"></script>
 @endsection
