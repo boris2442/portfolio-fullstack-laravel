@@ -77,13 +77,13 @@
                             </a>
                         </li>
                         <li>
-                            <a  href="message.html">
+                            <a  href="{{route('message.index')}}">
                                 <span><i class="fas fa-enveloppe"> </i></span>
                                 <span>Messages</span>
                             </a>
                         </li>
                         <li>
-                            <a  href="user.html">
+                            <a  href="{{route('user.index')}}">
                                 <span><i class="fas fa-users"> </i></span>
                                 <span>Users</span>
                             </a>
@@ -94,7 +94,7 @@
                 <div class="nav-list">
                     <ul>
                         <li>
-                            <a href="setting.html">
+                            <a href="{{ route('setting.index') }}">
                                 <span><i class="fas fa-cog "> </i></span>
                                 <span>Settings</span>
                             </a>

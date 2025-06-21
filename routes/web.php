@@ -12,6 +12,9 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\EducationController;
 use App\Http\Controllers\Admin\ExperienceController;
 use App\Http\Controllers\Admin\TestimonialController;
+use App\Http\Controllers\Admin\MessageController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\SettingController;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home-page');
@@ -67,6 +70,32 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::delete('/admin/project/{id}', [ExperienceController::class, 'destroy'])->name('project.destroy');
     Route::get('/admin/project/edit/{id}', [ExperienceController::class, 'edit'])->name('project.edit');
     Route::patch('/admin/project/edit/{id}', [ExperienceController::class, 'update'])->name('project.update');
+
+
+    //Route destines aux message
+
+    Route::get('/admin/message', [MessageController::class, 'index'])->name('message.index');
+    Route::get('/admin/message/create', [MessageController::class, 'create'])->name('message.create');
+    Route::post('/admin/message/create', [MessageController::class, 'store'])->name('message.store');
+    Route::delete('/admin/message/{id}', [MessageController::class, 'destroy'])->name('message.destroy');
+    Route::get('/admin/message/edit/{id}', [MessageController::class, 'edit'])->name('message.edit');
+    Route::patch('/admin/message/edit/{id}', [MessageController::class, 'update'])->name('message.update');
+    //Route destines aux user
+
+    Route::get('/admin/user', [UserController::class, 'index'])->name('user.index');
+    Route::get('/admin/message/create', [UserController::class, 'create'])->name('user.create');
+    Route::post('/admin/user/create', [UserController::class, 'store'])->name('user.store');
+    Route::delete('/admin/user/{id}', [UserController::class, 'destroy'])->name('user.destroy');
+    Route::get('/admin/user/edit/{id}', [UserController::class, 'edit'])->name('user.edit');
+    Route::patch('/admin/user/edit/{id}', [UserController::class, 'update'])->name('user.update');
+    //Route destines aux settings
+
+    Route::get('/admin/setting', [SettingController::class, 'index'])->name('setting.index');
+    Route::get('/admin/setting/create', [SettingController::class, 'create'])->name('setting.create');
+    Route::post('/admin/setting/create', [SettingController::class, 'store'])->name('setting.store');
+    Route::delete('/admin/setting/{id}', [SettingController::class, 'destroy'])->name('setting.destroy');
+    Route::get('/admin/setting/edit/{id}', [SettingController::class, 'edit'])->name('setting.edit');
+    Route::patch('/admin/setting/edit/{id}', [SettingController::class, 'update'])->name('setting.update');
 });
 
 

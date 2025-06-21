@@ -3,7 +3,7 @@
 @section('content')
 
 
-<main>
+    <main>
 
         <!--==================== SETTING ====================-->
         <section class="setting" id="setting">
@@ -35,14 +35,14 @@
                     </nav>
                 </div>
                 <div class="setting_content">
-                     <section class="about" id="about">
+                    <section class="about" id="about">
                         <div class="titlebar">
                             <h1>General Setting</h1>
                             <button>Save Changes</button>
                         </div>
                         <div class="card-wrapper">
                             <div class="wrapper_left">
-                                <div class="card" >
+                                <div class="card">
                                     <label>Full Name</label>
                                     <input type="text">
 
@@ -53,10 +53,10 @@
                                     <input type="text">
 
                                     <label>Address</label>
-                                    <input type="text" >
-            
+                                    <input type="text">
+
                                     <label>Description</label>
-                                    <textarea cols="10" rows="5"  ></textarea>
+                                    <textarea cols="10" rows="5"></textarea>
                                 </div>
                                 <div class="card">
                                     <label>Tagline</label>
@@ -66,15 +66,15 @@
                             <div class="wrapper_right">
                                 <div class="card">
                                     <img src="../../template/assets/img/avatar.jpg" class="avatar_img">
-                                    <input type="file" id="fileimg" >  
+                                    <input type="file" id="fileimg">
                                 </div>
                                 <div class="card">
                                     <p>CV</p>
-                                    <input type="file" id="filecv" />    
-                                </div>     
+                                    <input type="file" id="filecv" />
+                                </div>
                             </div>
                         </div>
-                        
+
                         <div class="titlebar">
                             <h1></h1>
                             <button>Save Changes</button>
@@ -85,4 +85,4 @@
         </section>
     </main>
     <script src="{{ asset('template/assets/js/admin.js') }}"></script>
-    @endsection
+@endsection
