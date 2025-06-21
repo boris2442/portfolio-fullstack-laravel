@@ -78,7 +78,10 @@
                         </div>
                     </div>
                 @endforeach
-                {{ $services->links() }}
+                <div class="mt-4 text-center text-red-500">
+                    {{ $services->links() }}
+                </div>
+
 
             </div>
             {{-- // Pagination --}}

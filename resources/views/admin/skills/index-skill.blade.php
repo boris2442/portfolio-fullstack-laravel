@@ -42,31 +42,37 @@
                     <div class="skill_table-items">
                         <p>{{ $skill->name }}</p>
                         <div class="table_skills-bar">
-                            <span class="table_skills-percentage"
-                             style="width: {{ $skill->proficiency }}%;"></span>
+                            <span class="table_skills-percentage" style="width: {{ $skill->proficiency }}%;"></span>
                             <strong>{{ $skill->proficiency }}%</strong>
                         </div>
-                        @if($skill->service)
-                        <p>{{$skill->service->title}}</p>
-                            @else
+                        @if ($skill->service)
+                            <p>{{ $skill->service->title }}</p>
+                        @else
                             <p></p>
                         @endif
                         <div>
                             <button class="btn-icon success">
                                 <i class="fas fa-pencil-alt"></i>
                             </button>
-                            <button class="btn-icon danger">
-                                <i class="far fa-trash-alt"></i>
-                            </button>
+                            <form action="{{ route('skill.destroy', $skill->id) }}" method="POST" class="inline-block">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn-icon danger">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </form>
+                            
                         </div>
                     </div>
-                @endforeach
+            </div>
+            </div>
+            @endforeach
 
 
-<div class="">
-    {{ $skills->links() }}
-</div>
-                {{-- <div class="table-paginate">
+            <div class="">
+                {{ $skills->links() }}
+            </div>
+            {{-- <div class="table-paginate">
                     <div class="pagination">
                         <a href="#" class="btn">&laquo;</a>
                         <a href="#" class="btn active">1</a>

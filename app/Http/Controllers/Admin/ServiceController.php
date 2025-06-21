@@ -31,7 +31,7 @@ class ServiceController extends Controller
             [
                 "title" => "required|string|max:244",
                 "icon" => "required|string|max:244|",
-                "description" => "required|string|max:255"
+                "description" => "required|string"
             ]
         );
         Service::create($validate);

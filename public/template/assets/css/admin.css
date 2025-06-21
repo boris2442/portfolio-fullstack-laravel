@@ -1879,3 +1879,7 @@ main {
     width: 100%;
   }
 }
+
+/* .relative z-0 inline-flex rtl:flex-row-reverse shadow-sm rounded-md{
+  background: red !important;
+} */

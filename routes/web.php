@@ -39,6 +39,12 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
     //////////////////////////End services
     Route::get('/admin/skill', [SkillController::class, 'index'])->name('skill.index');
+    Route::delete('/admin/skill/{id}', [SkillController::class, 'destroy'])->name('skill.destroy');
+    Route::get('/admin/skill/create', [SkillController::class, 'create'])->name('skill.create');
+    Route::post('/admin/skill/create', [SkillController::class, 'store'])->name('skill.store');
+    // Route::get('/admin/skill/edit/{id}', [SkillController::class, 'edit'])->name('skill.edit');
+    // Route::patch('/admin/skill/edit/{id}', [SkillController::class, 'update'])->name('skill.update');
+    
 
     // Routes destinees a l'education
     Route::get('/admin/education', [EducationController::class, 'index'])->name('education.index');

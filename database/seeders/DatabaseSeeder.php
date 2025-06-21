@@ -18,7 +18,8 @@ class DatabaseSeeder extends Seeder
                 AboutSeeder::class,
                 MediaSeeder::class,
                 ServiceSeeder::class,
-                SkillSeeder::class
+                SkillSeeder::class,
+                EducationSeeder::class,
 
             ]
         );
