@@ -9,15 +9,15 @@ use Illuminate\Http\Request;
 class EducationController extends Controller
 {
     //
-    public function index()
+    public function index(Request $request)
     {
-        $educations = Education::All();
+        $educations = Education::filter($request)->paginate(4);
         return view('admin.education.index-education', compact('educations'));
     }
        public function destroy($id)
     {
-        $service = Education::findOrFail($id);
-        $service->delete();
+        $education = Education::findOrFail($id);
+        $education->delete();
         return redirect()->route('education.index')->with('success', 'education destroy with success');
     }
 

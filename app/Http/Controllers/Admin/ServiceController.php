@@ -10,13 +10,9 @@ class ServiceController extends Controller
 {
     //
     public function index(Request $request)
-    {
-        // $services = Service::all();
-        $services = Service::filter($request)->get();
-       
-        // $services = $servicesQuery->paginate(5);
-        
-        return view('admin.services.index-service', compact('services' ));
+    {   
+        $services = Service::filter($request)->paginate(5);;
+        return view('admin.services.index-service', compact('services'));
     }
     public function destroy($id)
     {

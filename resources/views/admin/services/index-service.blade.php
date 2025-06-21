@@ -78,7 +78,7 @@
                         </div>
                     </div>
                 @endforeach
-
+                {{ $services->links() }}
 
             </div>
             {{-- // Pagination --}}

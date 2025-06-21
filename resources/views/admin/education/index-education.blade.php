@@ -19,17 +19,27 @@
                         </ul>
                     </div>
                 </div>
-                <div class="table-search">
-                    <div>
-                        <select class="search-select" name="" id="">
-                            <option value="">Filter Service</option>
-                        </select>
-                    </div>
-                    <div class="relative">
-                        <input class="search-input" type="text" name="search" placeholder="Search Service...">
-                    </div>
-                </div>
+                <form action="{{ route('education.index') }}" method="get">
+                    @csrf
 
+                    <div class="table-search">
+                        <div>
+                            <select class="search-select " name="title" id="">
+                                <option value="">Filter Education</option>
+                            </select>
+                        </div>
+                        <div class="flex gap-5 ml-2 relative">
+
+                            <input class="" type="text" name="institution"
+                                placeholder="Rechercher le titre de l'institution..." value="{{ Request::get('institution') }}">
+                            <button class="min-w-30 h-12 ">Recherche</button>
+                            <a href="">
+                                <button class="min-w-30 h-12 delete">Réinitialiser</button>
+                            </a>
+                        </div>
+                        
+                    </div>
+                </form>
                 <div class="education_table-heading">
                     <p>Institution</p>
                     <p>Period</p>
@@ -61,41 +71,41 @@
                         </div>
                     </div>
                 @endforeach
+                {{ $educations->links() }}
 
             </div>
             <!-------------- EDUCATION MODAL --------------->
             <div class="modal">
-                <form method='POST' action="{{ route('education.store') }}"
-                >
-                @csrf
-                <div class="modal-content">
-                    <h2>Create Education</h2>
-                    <span class="close-modal">×</span>
-                    <hr>
-                    <div>
-                        <label>Institution</label>
-                        <input type="text"  name="institution"/>
+                <form method='POST' action="{{ route('education.store') }}">
+                    @csrf
+                    <div class="modal-content">
+                        <h2>Create Education</h2>
+                        <span class="close-modal">×</span>
+                        <hr>
+                        <div>
+                            <label>Institution</label>
+                            <input type="text" name="institution" />
 
-                        <label>Period</label>
-                        <input type="text"  name="period"/>
+                            <label>Period</label>
+                            <input type="text" name="period" />
 
-                        <label>Degree</label>
-                        <input type="text" name="degree"/>
+                            <label>Degree</label>
+                            <input type="text" name="degree" />
 
-                        <label>Department</label>
-                        <input type="text" name="departement" />
+                            <label>Department</label>
+                            <input type="text" name="departement" />
+                        </div>
+                        <hr>
+                        <div class="modal-footer">
+                            <button class="close-modal">
+                                Cancel
+                            </button>
+                            <button class="secondary close-modal">
+                                <span><i class="fa fa-spinner fa-spin"></i></span>
+                                Save
+                            </button>
+                        </div>
                     </div>
-                    <hr>
-                    <div class="modal-footer">
-                        <button class="close-modal">
-                            Cancel
-                        </button>
-                        <button class="secondary close-modal">
-                            <span><i class="fa fa-spinner fa-spin"></i></span>
-                            Save
-                        </button>
-                    </div>
-                </div>
                 </form>
             </div>
         </section>
