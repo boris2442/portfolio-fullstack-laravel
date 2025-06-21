@@ -16,13 +16,21 @@
     @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     @endif
+    <style>  
+        span span.relative.inline-flex.items-center.px-4.py-2.-ml-px.text-sm.font-medium.text-gray-500.bg-white.border.border-gray-300.cursor-default.leading-5 {
+            background: #53AF50 !important;
+            color: #fff !important;
+            border: none !important;
+        }
+    </style>
+
 </head>
 
 <body>
     {{-- =========================HEADER====================== --}}
     @include('layouts.admin.header-admin')
     {{-- =========================END HEADER====================== --}}
-    
+
     {{-- =========================SIDEBAR====================== --}}
     @include('layouts.admin.sidebar-admin')
     <!--==============end SIDEBAR ====================-->

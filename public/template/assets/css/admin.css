@@ -1883,3 +1883,8 @@ main {
 /* .relative z-0 inline-flex rtl:flex-row-reverse shadow-sm rounded-md{
   background: red !important;
 } */
+span span.relative.inline-flex.items-center.px-4.py-2.-ml-px.text-sm.font-medium.text-gray-500.bg-white.border.border-gray-300.cursor-default.leading-5{
+  background: #9c1818 !important;
+  color: #ccfa00 !important;
+  border-color: #e0e0e0 !important;
+ }

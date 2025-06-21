@@ -61,7 +61,7 @@
                                     <i class="fas fa-trash-alt"></i>
                                 </button>
                             </form>
-                            
+
                         </div>
                     </div>
             </div>
@@ -87,6 +87,8 @@
             <div class="modal ">
                 <div class="modal-content">
                     <h2>Create Skill</h2>
+                    <form method='post' action="{{ route('skill.store') }}">
+                        @csrf
                     <span class="close-modal">×</span>
                     <hr>
                     <div>
@@ -112,6 +114,7 @@
                             Save
                         </button>
                     </div>
+                    </form>
                 </div>
             </div>
         </section>
