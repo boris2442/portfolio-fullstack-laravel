@@ -12,7 +12,7 @@ class SkillController extends Controller
     //
     public function index()
     {
-     
+
         // $services=Service::all();
         // $skills=Skill::with('service')->orderBy('id','DESC' )->get()->paginate(4);
         $skills = Skill::with('service')->paginate(4);
@@ -25,26 +25,27 @@ class SkillController extends Controller
         $skill->delete();
         return redirect()->route('skill.index')->with('success', 'skill destroy with success');
     }
-    // public function create()
-    // {
-    //     $services = Service::all();
-    //     return view('admin.skills.create-skill', compact('services'));
-    // }
+    public function create()
+    {
+        //  $skills = Service::all();
+        //  return view('admin.skills.index-skill', compact('skills'));
+        return view('admin.skills.index-skill');
+    }
 
 
-    // public function store(Request $request)
-    // {
-    //     $validate = $request->validate(
-    //         [
-    //             "title" => "required|string|max:244",
-    //             "icon" => "required|string|max:244|",
-    //             "service_id" => "required|exists:services,id",
-    //             "description" => "required|string"
-    //         ]
-    //     );
-    //     Skill::create($validate);
-    //     return redirect()->route('skill.index')->with('success', 'skill create with successfull');
-    // }
+    public function store(Request $request)
+    {
+        $validate = $request->validate(
+            [
+                "name" => "required|string|max:244",
+                "proficiency" => "required|string|max:244|",
+                // "service_id" => "required|exists:services,id",
+                "service" => "required|string"
+            ]
+        );
+        Skill::create($validate);
+        return redirect()->route('skill.index')->with('success', 'skill create with successfull');
+    }
 
     // public function edit($id)
     // {
@@ -98,5 +99,5 @@ class SkillController extends Controller
     //     $skills = Skill::where('service_id', $serviceId)->get();
     //     return response()->json($skills);
     // }
-   
+
 }

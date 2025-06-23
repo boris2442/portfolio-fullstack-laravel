@@ -73,6 +73,14 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin/experience', [ExperienceController::class, 'index'])->name('experience.index');
     Route::get('/admin/experience/create', [ExperienceController::class, 'create'])->name('experience.create');
     Route::post('/admin/experience/create', [ExperienceController::class, 'store'])->name('experience.store');
+Route::delete('/admin/experience/{id}', [ExperienceController::class, 'destroy'])->name('experience.destroy');
+    Route::get('/admin/experience/edit/{id}', [ExperienceController::class, 'edit'])->name('experience.edit');
+    Route::patch('/admin/experience/edit/{id}', [ExperienceController::class, 'update'])->name('experience.update');
+    //Route destines aux project
+    Route::get('/admin/project', [ExperienceController::class, 'index'])->name('project.index');
+    Route::get('/admin/project/create', [ExperienceController::class, 'create'])->name('project.create');
+    Route::post('/admin/project/create', [ExperienceController::class, 'store'])->name('project.store');
+
     Route::delete('/admin/project/{id}', [ExperienceController::class, 'destroy'])->name('project.destroy');
     Route::get('/admin/project/edit/{id}', [ExperienceController::class, 'edit'])->name('project.edit');
     Route::patch('/admin/project/edit/{id}', [ExperienceController::class, 'update'])->name('project.update');

@@ -50,6 +50,7 @@
                         @else
                             <p></p>
                         @endif
+                        {{-- <p>{{ $skill->service }}</p> --}}
                         <div>
                             <button class="btn-icon success">
                                 <i class="fas fa-pencil-alt"></i>
@@ -89,31 +90,33 @@
                     <h2>Create Skill</h2>
                     <form method='post' action="{{ route('skill.store') }}">
                         @csrf
-                    <span class="close-modal">×</span>
-                    <hr>
-                    <div>
-                        <p>Name</p>
-                        <input type="text" class="input" />
+                        <span class="close-modal">×</span>
+                        <hr>
+                        <div>
+                            <p>Name</p>
+                            <input type="text" class="input" name='name' />
 
-                        <p>Proficiency</p>
-                        <input type="text" class="input" />
+                            <p>Proficiency</p>
+                            <input type="text" class="input" value="{{ @old('proficiency') }}" name="proficiency" />
 
-                        <p>Service</p>
-                        <select class="inputSelect" name="" id="">
-                            <option value="">Front-end developer</option>
-                            <option value="">Backend developer</option>
-                        </select>
-                    </div>
-                    <hr>
-                    <div class="modal-footer">
-                        <button class="close-modal">
-                            Cancel
-                        </button>
-                        <button class="secondary close-modal">
-                            <span><i class="fa fa-spinner fa-spin"></i></span>
-                            Save
-                        </button>
-                    </div>
+
+
+                            <p>Service</p>
+                            <select class="inputSelect" name="service" id="">
+                                <option value="front-end developer">Front-end developer</option>
+                                <option value="backend developer">Backend developer</option>
+                            </select>
+                        </div>
+                        <hr>
+                        <div class="modal-footer">
+                            <button class="close-modal">
+                                Cancel
+                            </button>
+                            <button type='submit' class="secondary close-modal">
+                                <span><i class="fa fa-spinner fa-spin"></i></span>
+                                Save
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>

@@ -8,8 +8,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Skill extends Model
 {
-    //
-     public function service(): BelongsTo
+    protected $fillable = ['title', 'description', 'price'];
+
+    public function service(): BelongsTo
     {
         return $this->belongsTo(Service::class);
     }
