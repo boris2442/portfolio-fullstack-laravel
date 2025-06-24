@@ -68,21 +68,22 @@ class TestimonialController extends Controller
     }
     public function edit($id)
     {
-        // $testimonial = Testimonial::findOrFail($id);
-        // return view('admin.testimonial.edit-testimonial', compact('testimonial'));
-        return view('admin.testimonial.index-testimonial');
+        $testimonial = Testimonial::findOrFail($id);
+
+        return view('admin.testimonial.index-testimonial', compact('testimonial'));
     }
     public function update(Request $request, $id)
     {
-        // $testimonial = Testimonial::findOrFail($id);
-        // $validate = $request->validate(
-        //     [
-        //         "name" => "required|string|max:244",
-        //         "description" => "required|string|max:244|",
-        //         "image" => "required|image|mimes:jpeg,png,jpg,gif,svg|max:2048",
-        //     ]
-        // );
-        // $testimonial->update($validate);
+        $testimonial = Testimonial::findOrFail($id);
+        $validate = $request->validate(
+            [
+                "name" => "required|string|max:244",
+                "function" => "required|string|max:244",
+                "testimony" => "required|string|max:244|",
+                "image" => "required|image|mimes:jpeg,png,jpg,gif,svg|max:2048",
+            ]
+        );
+        $testimonial->update($validate);
         return redirect()->route('testimonial.index')->with('success', 'Testimonial updated successfully');
     }
     //public function show($id)
