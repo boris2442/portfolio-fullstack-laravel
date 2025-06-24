@@ -40,32 +40,33 @@
                 <p>Actions</p>
             </div>
             <!-- item 1 -->
+            @foreach($testimonials as $testimonial)
             <div class="testimonial_table-items">
                 <p>
                     <img src="../../template/assets/img/avatar.jpg" alt="" class="testimonial_img-list">
                 </p>
-                <p>Backend Developer</p>
-                <p>Backend Developer</p>
-                <p>Backend Developer</p>
+                <p>{{$testimonial->name}}</p>
+                <p>{{$testimonial->function}}</p>
+                <p>{{$testimonial->testimony}}</p>
                 <p>5/5</p>
                 <div>
                     <button class="btn-icon success">
                         <i class="fas fa-pencil-alt"></i>
                     </button>
-                    <button class="btn-icon danger">
-                        <i class="far fa-trash-alt"></i>
-                    </button>
+                    <form action="{{ route('testimonial.destroy', $testimonial->id) }}" method="POST"
+                        class="inline-block">
+                        @csrf
+                        @method('DELETE')
+                        <button class="btn-icon danger"
+                            onClick="return confirm('Are you sure you want to delete this testimonial?')">
+                            <i class="far fa-trash-alt"></i>
+                        </button>
+                    </form>
                 </div>
             </div>
-            <div class="table-paginate">
-                <div class="pagination">
-                    <a href="#" class="btn">&laquo;</a>
-                    <a href="#" class="btn active">1</a>
-                    <a href="#" class="btn">2</a>
-                    <a href="#" class="btn">3</a>
-                    <a href="#" class="btn">&raquo;</a>
-                </div>
-            </div>
+            @endforeach
+
+            <div class="">{{$testimonials->links()}}</div>
         </div>
     </section>
     <!--===================ADD testimonials ====================-->

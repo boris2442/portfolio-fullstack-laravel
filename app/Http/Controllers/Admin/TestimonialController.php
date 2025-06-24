@@ -11,10 +11,13 @@ class TestimonialController extends Controller
     //
     public function index()
     {
-        return view('admin.testimonial.index-testimonial');
+        // $testimonials = Testimonial::all();
+        $testimonials = Testimonial::paginate(4); // Pagination with 4 items per page
+        return view('admin.testimonial.index-testimonial', compact('testimonials'));
     }
     public function create()
     {
+
         return view('admin.testimonial.index-testimonial');
     }
     public function store(Request $request)

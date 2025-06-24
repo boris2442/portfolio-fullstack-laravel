@@ -6,6 +6,7 @@ use App\Models\About;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use App\Models\Education;
+use App\Models\Testimonial;
 
 class HomeController extends Controller
 {
@@ -15,7 +16,8 @@ class HomeController extends Controller
         $about = About::latest()->first();
         $services = Service::All();
         $educations = Education::All();
+        $testimonials = Testimonial::All();
 
-        return view('pages.home-page.index-home', compact('about', 'services', 'educations'));
+        return view('pages.home-page.index-home', compact('about', 'services', 'educations', 'testimonials'));
     }
 }
