@@ -43,16 +43,18 @@
             @foreach($testimonials as $testimonial)
             <div class="testimonial_table-items">
                 <p>
-                    <img src="../../template/assets/img/avatar.jpg" alt="" class="testimonial_img-list">
+                    <img src="{{  $testimonial->image ? asset($testimonial->image) : asset('template/assets/img/avatar.jpg') }}"
+                        alt="image de {{$testimonial->name}}">
                 </p>
                 <p>{{$testimonial->name}}</p>
                 <p>{{$testimonial->function}}</p>
                 <p>{{$testimonial->testimony}}</p>
                 <p>5/5</p>
                 <div>
-                    <button class="btn-icon success">
+                    <a href="{{ route('testimonial.update', $testimonial->id) }}" class="btn-icon success">
                         <i class="fas fa-pencil-alt"></i>
-                    </button>
+                    </a>
+
                     <form action="{{ route('testimonial.destroy', $testimonial->id) }}" method="POST"
                         class="inline-block">
                         @csrf
@@ -111,7 +113,8 @@
                 <div class="wrapper_right">
                     <div class="card">
                         <img src="{{ asset('template/assets/img/avatar.jpg') }}" class="avatar_img">
-                        <input type="file" id="fileimg" name="image">
+                        <input type="file" id="fileimg" name="image" value="{{ old('image') }}" />
+
                     </div>
                 </div>
 
@@ -123,7 +126,50 @@
         </form>
     </section>
     <!--===================EDIT Testimonial ====================-->
-    @include('admin.testimonial.edit-testimonial')
+    {{-- @include('admin.testimonial.edit-testimonial') --}}
+
+    <!--===================EDIT Testimonial ====================-->
+    <section class="about">
+        <form action="{{ route('testimonial.update', $testimonial->id) }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            @method('PUT')
+            <div class="titlebar">
+                <h1>Edit Testimonial </h1>
+                <button>Update Testimonial</button>
+            </div>
+            <div class="card-wrapper">
+                <div class="wrapper_left">
+                    <div class="card">
+
+                        <label>Name</label>
+                        <input type="text" name="name" value="{{ $testimonial->name }}" />
+
+                        <label>Function</label>
+                        <input type="text" name="function" value="{{$testimonial->function  }}" />
+
+                        <label>Testimony</label>
+                        <textarea cols="10" rows="5" name="testimony">{{$testimonial->testimony  }}</textarea>
+
+                    </div>
+                </div>
+
+                <div class="wrapper_right">
+                    <div class="card">
+                        <label>Image</label>
+                        <img src="asset('template/assets/img/avatar.jpg')" alt="" class="project_img">
+                        <input type="file" name="image" value="{{$testimonial->image}}" />
+
+                        <br><br><br>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+        {{-- <div class="titlebar">
+            <h1></h1>
+            <button>Update Testimonial</button>
+        </div> --}}
+    </section><br><br><br>
 
 </main>
 <script src="{{asset('template/assets/js/admin.js')}}"></script>

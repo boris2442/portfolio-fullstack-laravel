@@ -59,7 +59,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin/testimonial/create', [TestimonialController::class, 'create'])->name('testimonial.create');
     Route::post('/admin/testimonial/create', [TestimonialController::class, 'store'])->name('testimonial.store');
     Route::delete('/admin/testimonial/{id}', [TestimonialController::class, 'destroy'])->name('testimonial.destroy');
-    //Route::get('/admin/testimonial/edit/{id}', [TestimonialController::class, 'edit'])->name('testimonial.edit');
+    Route::get('/admin/testimonial/edit/{id}', [TestimonialController::class, 'edit'])->name('testimonial.edit');
+    Route::put('/admin/testimonial/edit/{id}', [TestimonialController::class, 'update'])->name('testimonial.update');
 
     //Route destinnees aux project
     Route::get('/admin/project', [ProjectController::class, 'index'])->name('project.index');
@@ -123,11 +124,6 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
-
-
-
-
 
 
 

@@ -11,7 +11,7 @@ class TestimonialController extends Controller
     //
     public function index()
     {
-        // $testimonials = Testimonial::all();
+
         $testimonials = Testimonial::paginate(4);
         return view('admin.testimonial.index-testimonial', compact('testimonials'));
     }
@@ -79,13 +79,45 @@ class TestimonialController extends Controller
             [
                 "name" => "required|string|max:244",
                 "function" => "required|string|max:244",
-                "testimony" => "required|string|max:244|",
+                "testimony" => "required|string|max:1000",
                 "image" => "required|image|mimes:jpeg,png,jpg,gif,svg|max:2048",
+            ],
+            [
+                'name.required' => 'Le nom est obligatoire.',
+                'name.string' => 'Le nom doit être une chaîne de caractères.',
+                'name.max' => 'Le nom ne doit pas dépasser 244 caractères.',
+                'function.required' => 'La fonction est obligatoire.',
+                'function.string' => 'La fonction doit être une chaîne de caractères.',
+                'function.max' => 'La fonction ne doit pas dépasser 244 caractères.',
+                'testimony.required' => 'Le témoignage est obligatoire.',
+                'testimony.string' => 'Le témoignage doit être une chaîne de caractères.',
+                'testimony.max' => 'Le témoignage ne doit pas dépasser 1000 caractères.',
+                'image.required' => 'L\'image est obligatoire.',
+                'image.image' => 'Le fichier doit être une image.',
+                'image.mimes' => 'L\'image doit être de type jpeg, png, jpg, gif ou svg.',
+                'image.max' => 'L\'image ne doit pas dépasser 2 Mo.',
             ]
         );
+        if ($request->hasFile('image')) {
+            // Delete old image if it exists
+            if ($testimonial->image && file_exists(public_path($testimonial->image))) {
+                unlink(public_path($testimonial->image));
+            }
+            $image = $request->file('image');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images/testimonials'), $imageName);
+            $validate['image'] = 'images/testimonials/' . $imageName;
+        } else {
+            // Keep the old image if no new image is uploaded
+            $validate['image'] = $testimonial->image;
+        }
         $testimonial->update($validate);
         return redirect()->route('testimonial.index')->with('success', 'Testimonial updated successfully');
     }
+
+
+
+
     //public function show($id)
     //{
     // $testimonial = Testimonial::findOrFail($id);
