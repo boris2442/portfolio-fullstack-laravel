@@ -11,6 +11,7 @@ class TestimonialController extends Controller
     //
     public function index()
     {
+        
 
         $testimonials = Testimonial::paginate(4);
         return view('admin.testimonial.index-testimonial', compact('testimonials'));
@@ -27,6 +28,7 @@ class TestimonialController extends Controller
                 "name" => "required|string|max:244",
                 "testimony" => "required|string|max:244",
                 "function" => "required|string|max:244",
+                "rating" => "required|integer|min:1|max:5",
                 "image" => "required|image|mimes:jpeg,png,jpg,gif,svg|max:2048",
             ],
             [
@@ -43,6 +45,11 @@ class TestimonialController extends Controller
                 'image.image' => 'Le fichier doit être une image.',
                 'image.mimes' => 'L\'image doit être de type jpeg, png, jpg, gif ou svg.',
                 'image.max' => 'L\'image ne doit pas dépasser 2 Mo.',
+                'rating.required' => 'La note est obligatoire.',
+                'rating.integer' => 'La note doit être un entier.',
+                'rating.min' => 'La note doit être au moins 1.',
+                'rating.max' => 'La note ne doit pas dépasser 5.',
+
             ]
         );
 
@@ -80,6 +87,7 @@ class TestimonialController extends Controller
                 "name" => "required|string|max:244",
                 "function" => "required|string|max:244",
                 "testimony" => "required|string|max:1000",
+                "rating" => "required|integer|min:1|max:5",
                 "image" => "required|image|mimes:jpeg,png,jpg,gif,svg|max:2048",
             ],
             [
@@ -96,6 +104,10 @@ class TestimonialController extends Controller
                 'image.image' => 'Le fichier doit être une image.',
                 'image.mimes' => 'L\'image doit être de type jpeg, png, jpg, gif ou svg.',
                 'image.max' => 'L\'image ne doit pas dépasser 2 Mo.',
+                'rating.required' => 'La note est obligatoire.',
+                'rating.integer' => 'La note doit être un entier.',
+                'rating.min' => 'La note doit être au moins 1.',
+                'rating.max' => 'La note ne doit pas dépasser 5.',
             ]
         );
         if ($request->hasFile('image')) {

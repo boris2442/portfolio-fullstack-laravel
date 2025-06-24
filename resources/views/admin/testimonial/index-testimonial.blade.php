@@ -49,7 +49,7 @@
                 <p>{{$testimonial->name}}</p>
                 <p>{{$testimonial->function}}</p>
                 <p>{{$testimonial->testimony}}</p>
-                <p>5/5</p>
+                <p>{{$testimonial->rating}}/5</p>
                 <div>
                     <a href="{{ route('testimonial.update', $testimonial->id) }}" class="btn-icon success">
                         <i class="fas fa-pencil-alt"></i>
@@ -94,6 +94,15 @@
                         <label>Function</label>
                         <input type="text" name="function" value="{{ old('function') }}" />
                         @error('function')
+                        <div class="text-red-500 text-sm mt-1">
+                            {{ $message }}
+                        </div>
+                        @enderror
+                        <label>rating</label>
+                        <input type="number" name="rating" value="{{ old('rating') }}" class="w-full"
+                            placeholder="Enter rating (1-5)" 
+                            id="rating"/>
+                        @error('rating')
                         <div class="text-red-500 text-sm mt-1">
                             {{ $message }}
                         </div>
@@ -146,7 +155,14 @@
 
                         <label>Function</label>
                         <input type="text" name="function" value="{{$testimonial->function  }}" />
-
+                        <label>rating</label>
+                        <input type="number" name="rating" value="{{ old('rating') }}" class="w-full"
+                            placeholder="Enter rating (1-5)" />
+                        @error('raiting')
+                        <div class="text-red-500 text-sm mt-1">
+                            {{ $message }}
+                        </div>
+                        @enderror
                         <label>Testimony</label>
                         <textarea cols="10" rows="5" name="testimony">{{$testimonial->testimony  }}</textarea>
 

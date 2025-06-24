@@ -706,12 +706,11 @@
                         </div>
 
                         <div>
-                            <i class="uil uil-star testimonial_icon-star"></i>
-                            <i class="uil uil-star testimonial_icon-star"></i>
-                            <i class="uil uil-star testimonial_icon-star"></i>
-                            <i class="uil uil-star testimonial_icon-star"></i>
-                            <i class="uil uil-star testimonial_icon-star"></i>
+                            @for ($i = 0; $i < $testimonial->rating; $i++)
+                                <i class="uil uil-star testimonial_icon-star text-yellow-500"></i>
+                                @endfor
                         </div>
+
                     </div>
                     <p class="testimonial_description">
                         {{$testimonial->testimony}}
@@ -719,7 +718,7 @@
                 </div>
                 @endforeach
                 <!--========= TESTIMONIAL 2 ==========-->
-                 
+
                 <!--========= TESTIMONIAL 3 ==========-->
                 {{-- <div class="testimonial_content swiper-slide">
                     <div class="testimonial_data">
