@@ -56,8 +56,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
     //Route destinees a testimonial dashboard
     Route::get('/admin/testimonial', [TestimonialController::class, 'index'])->name('testimonial.index');
-    //Route::get('/admin/testimonial/create', [TestimonialController::class, 'create'])->name('testimonial.create');
-    // Route::post('/admin/testimonial/create', [TestimonialController::class, 'store'])->name('testimonial.store');
+    Route::get('/admin/testimonial/create', [TestimonialController::class, 'create'])->name('testimonial.create');
+    Route::post('/admin/testimonial/create', [TestimonialController::class, 'store'])->name('testimonial.store');
     // Route::delete('/admin/testimonial/{id}', [TestimonialController::class, 'destroy'])->name('testimonial.destroy');
     //Route::get('/admin/testimonial/edit/{id}', [TestimonialController::class, 'edit'])->name('testimonial.edit');
 
