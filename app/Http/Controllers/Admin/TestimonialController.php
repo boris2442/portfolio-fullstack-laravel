@@ -12,7 +12,7 @@ class TestimonialController extends Controller
     public function index()
     {
         // $testimonials = Testimonial::all();
-        $testimonials = Testimonial::paginate(4); // Pagination with 4 items per page
+        $testimonials = Testimonial::paginate(4);
         return view('admin.testimonial.index-testimonial', compact('testimonials'));
     }
     public function create()
@@ -62,8 +62,8 @@ class TestimonialController extends Controller
 
     public function destroy($id)
     {
-        // $testimonial = Testimonial::findOrFail($id);
-        // $testimonial->delete();
+        $testimonial = Testimonial::findOrFail($id);
+        $testimonial->delete();
         return redirect()->route('testimonial.index')->with('success', 'Testimonial deleted successfully');
     }
     public function edit($id)

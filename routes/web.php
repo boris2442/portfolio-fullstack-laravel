@@ -44,7 +44,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::post('/admin/skill/create', [SkillController::class, 'store'])->name('skill.store');
     // Route::get('/admin/skill/edit/{id}', [SkillController::class, 'edit'])->name('skill.edit');
     // Route::patch('/admin/skill/edit/{id}', [SkillController::class, 'update'])->name('skill.update');
-    
+
 
     // Routes destinees a l'education
     Route::get('/admin/education', [EducationController::class, 'index'])->name('education.index');
@@ -58,7 +58,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin/testimonial', [TestimonialController::class, 'index'])->name('testimonial.index');
     Route::get('/admin/testimonial/create', [TestimonialController::class, 'create'])->name('testimonial.create');
     Route::post('/admin/testimonial/create', [TestimonialController::class, 'store'])->name('testimonial.store');
-    // Route::delete('/admin/testimonial/{id}', [TestimonialController::class, 'destroy'])->name('testimonial.destroy');
+    Route::delete('/admin/testimonial/{id}', [TestimonialController::class, 'destroy'])->name('testimonial.destroy');
     //Route::get('/admin/testimonial/edit/{id}', [TestimonialController::class, 'edit'])->name('testimonial.edit');
 
     //Route destinnees aux project
@@ -73,7 +73,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin/experience', [ExperienceController::class, 'index'])->name('experience.index');
     Route::get('/admin/experience/create', [ExperienceController::class, 'create'])->name('experience.create');
     Route::post('/admin/experience/create', [ExperienceController::class, 'store'])->name('experience.store');
-Route::delete('/admin/experience/{id}', [ExperienceController::class, 'destroy'])->name('experience.destroy');
+    Route::delete('/admin/experience/{id}', [ExperienceController::class, 'destroy'])->name('experience.destroy');
     Route::get('/admin/experience/edit/{id}', [ExperienceController::class, 'edit'])->name('experience.edit');
     Route::patch('/admin/experience/edit/{id}', [ExperienceController::class, 'update'])->name('experience.update');
     //Route destines aux project
