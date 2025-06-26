@@ -39,104 +39,144 @@
                 <p>Actions</p>
             </div>
             <!-- item 1 -->
+            @foreach($projects as $project)
             <div class="project_table-items">
                 <p>
-                    <img src="../../template/assets/img/no-image.png" alt="" class="project_img-list">
+
+                    <img src="{{  $project->image ? asset($project->image) : asset('template/assets/img/avatar.jpg') }}"
+                        alt="image de {{$project->name}}" class="project_img-list object-cover">
                 </p>
-                <p>Backend Developer</p>
-                <p>Backend Developer</p>
-                <p>Backend Developer</p>
+                <p>{{$project->title}}</p>
+                <p>{{$project->description}}</p>
+                <p>{{$project->link}}</p>
                 <div>
-                    <button class="btn success">
+                    <a href="{{ route('project.update', $project->id) }}" class="btn-icon success">
                         <i class="fas fa-pencil-alt"></i>
-                    </button>
-                    <button class="btn danger">
-                        <i class="far fa-trash-alt"></i>
-                    </button>
+                    </a>
+                    <form action="{{ route('project.destroy', $project->id) }}" method="POST" class="inline-block">
+                        @csrf
+                        @method('DELETE')
+                        <button class="btn-icon danger"
+                            onClick="return confirm('Are you sure you want to delete this project?')">
+                            <i class="far fa-trash-alt"></i>
+                        </button>
+                    </form>
                 </div>
             </div>
-            <div class="table-paginate">
-                <div class="pagination">
-                    <a href="#" class="btn">&laquo;</a>
-                    <a href="#" class="btn active">1</a>
-                    <a href="#" class="btn">2</a>
-                    <a href="#" class="btn">3</a>
-                    <a href="#" class="btn">&raquo;</a>
-                </div>
-            </div>
+            @endforeach
+            <div class="">{{$projects->links()}}</div>
+
         </div>
     </section>
     <!--===================ADD PROJECT ====================-->
     <section class="about" id="project">
-        <form>
+        <form action="{{ route('project.store') }}" enctype="multipart/form-data" method="POST">
+            @csrf
+            @if(session()->has('success'))
+            <div class="bg-green-400 text-white p-2">
+                {{ session('success') }}
+            </div>
+            @endif
+
+            @if(session()->has('error'))
+            <div class="bg-red-400 text-white p-2">
+                {{ session('error') }}
+            </div>
+            @endif
+
             <div class="titlebar">
                 <h1>Create Project </h1>
-                <button>Save Project</button>
+                {{-- <button>Save Project</button> --}}
             </div>
             <div class="card-wrapper">
                 <div class="wrapper_left">
                     <div class="card">
                         <label>Title</label>
-                        <input type="text" name="title" />
+                        <input type="text" name="title" value="{{ old('title') }}" />
 
                         <label>Description</label>
                         <textarea cols="10" rows="5" name="description"></textarea>
 
                         <label>Link</label>
-                        <input type="text"  name="link"/>
+                        <input type="text" name="link" value="{{ old('link') }}" />
                     </div>
                 </div>
 
                 <div class="wrapper_right">
                     <div class="card">
-                        <img src="../../template/assets/img/no-image.png" alt="" class="project_img">
-                        <input type="file" name="image">
+                        <img src="{{ asset('template/assets/img/no-image.png') }}" alt="" class="project_img">
+                        <input type="file" name="image" value="{{ old('image') }}">
                     </div>
                 </div>
 
             </div>
             <div class="titlebar">
                 <h1></h1>
-                <button>Save Project</button>
+                <button type="submit">Saved Project</button>
             </div>
         </form>
     </section>
     <!--===================EDIT PROJECT ====================-->
     <section class="about" id="project">
-        <div class="titlebar">
-            <h1>Edit Project </h1>
-            <button>Update Project</button>
-        </div>
-        <div class="card-wrapper">
-            <div class="wrapper_left">
-                <div class="card">
-
-                    <label>Title</label>
-                    <input type="text" class="input" />
-
-                    <label>Description</label>
-                    <textarea cols="10" rows="5"></textarea>
-
-                    <label>Link</label>
-                    <input type="text" class="input" />
-
-                </div>
+        <form action="{{ route('project.update', $project->id) }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            @method('PUT')
+            <div class="titlebar">
+                <h1>Edit Project </h1>
+                {{-- <button>Update Project</button> --}}
             </div>
+            <div class="card-wrapper">
+                <div class="wrapper_left">
+                    <div class="card">
 
-            <div class="wrapper_right ">
-                <div class="card">
-                    <img src="../../template/assets/img/no-image.png" alt="" class="project_img">
-                    <input type="file">
+                        <label>Title</label>
+                        <input type="text" class="input" name="title" value="{{ $project->title }}" />
+                        @error('title')
+                        <div class="text-red-500 text-sm mt-1">
+                            {{ $message }}
+                        </div>
+                        @enderror
+
+                        <label>Description</label>
+                        <textarea cols="10" rows="5" name="description">{{ $project->description }}</textarea>
+                        @error('description')
+                        <div class="text-red-500 text-sm mt-1">
+                            {{ $message }}
+                        </div>
+                        @enderror
+
+                        <label>Link</label>
+                        <input type="text" class="input" name="link" value="{{ $project->link }}" />
+                        @error('link')
+                        <div class="text-red-500 text-sm mt-1">
+                            {{ $message }}
+                        </div>
+                        @enderror
+
+                    </div>
                 </div>
-            </div>
 
-        </div>
-        <div class="titlebar">
-            <h1></h1>
-            <button>Update Project</button>
-        </div>
+                <div class="wrapper_right ">
+                    <div class="card">
+                        <img src="{{ asset('template/assets/img/no-image.png') }}" alt="" class="project_img">
+                        <input type="file" name="image">
+                        @error('image')
+                        <div class="text-red-500 text-sm mt-1">
+                            {{ $message }}
+                        </div>
+                        @enderror
+                    </div>
+                </div>
+
+            </div>
+            <div class="titlebar">
+                <h1></h1>
+                <button>Update Project</button>
+
+            </div>
+        </form>
     </section><br><br><br>
     </div>
 </main>
-<script src="../../template/assets/js/admin.js"></script>
+<script src="{{asset('template/assets/js/admin.js')}}"></script>
 @endsection

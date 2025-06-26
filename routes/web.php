@@ -70,6 +70,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::delete('/admin/experience/{id}', [ExperienceController::class, 'destroy'])->name('experience.destroy');
     Route::get('/admin/experience/edit/{id}', [ExperienceController::class, 'edit'])->name('experience.edit');
     Route::patch('/admin/experience/edit/{id}', [ExperienceController::class, 'update'])->name('experience.update');
+
     //Route destines aux project
 
 
@@ -79,7 +80,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
     Route::delete('/admin/project/{id}', [ProjectController::class, 'destroy'])->name('project.destroy');
     Route::get('/admin/project/edit/{id}', [ProjectController::class, 'edit'])->name('project.edit');
-    Route::patch('/admin/project/edit/{id}', [ProjectController::class, 'update'])->name('project.update');
+    Route::put('/admin/project/edit/{id}', [ProjectController::class, 'update'])->name('project.update');
 
 
     //Route destines aux message
