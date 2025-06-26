@@ -39,7 +39,7 @@ class SkillController extends Controller
             [
                 "name" => "required|string|max:244",
                 "proficiency" => "required|string|max:244|",
-                // "service_id" => "required|exists:services,id",
+                 "service_id" => "required|exists:services,id",
                 "service" => "required|string"
             ]
         );

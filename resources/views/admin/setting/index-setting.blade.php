@@ -1,4 +1,4 @@
-@extends('layouts.admin.admin-layout');
+@extends('layouts.admin.layout-admin');
 @section('title', 'seeting du dashboard')
 @section('content')
     <main>
