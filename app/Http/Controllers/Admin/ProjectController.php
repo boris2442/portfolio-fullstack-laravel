@@ -26,7 +26,7 @@ class ProjectController extends Controller
             [
                 "title" => "required|string|max:244",
                 "description" => "required|string|max:244",
-                "link" => "required|string|max:55",
+                "link" => "required|url|active_url|max:1000",
                 "image" => "required|image|mimes:jpeg,png,jpg,gif,svg|max:2048",
             ],
             [
@@ -43,6 +43,8 @@ class ProjectController extends Controller
                 'image.image' => 'Le fichier doit être une image.',
                 'image.mimes' => 'L\'image doit être de type jpeg, png, jpg, gif ou svg.',
                 'image.max' => 'L\'image ne doit pas dépasser 2 Mo.',
+                'link.active_url' => 'Le lien doit être un site actif.',
+                'link.url' => 'Le lien doit être une URL valide.',
 
 
             ]

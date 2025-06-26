@@ -93,12 +93,26 @@
                     <div class="card">
                         <label>Title</label>
                         <input type="text" name="title" value="{{ old('title') }}" />
+                        @error('title')
+                        <div class="text-red-500 text-sm mt-1">
+                            {{ $message }}
+                        </div>
+                        @enderror
 
                         <label>Description</label>
                         <textarea cols="10" rows="5" name="description"></textarea>
-
+                        @error('description')
+                        <div class="text-red-500 text-sm mt-1">
+                            {{ $message }}
+                        </div>
+                        @enderror
                         <label>Link</label>
                         <input type="text" name="link" value="{{ old('link') }}" />
+                         @error('link')
+                        <div class="text-red-500 text-sm mt-1">
+                            {{ $message }}
+                        </div>
+                        @enderror
                     </div>
                 </div>
 
