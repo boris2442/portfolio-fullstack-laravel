@@ -563,24 +563,25 @@
                 </div>
             </div>
 
-            <form action="" class="contact_form grid" method="post">
+            <form action="{{ route('home.store') }}" class="contact_form grid" method="post">
+                @csrf
                 <div class="contact_inputs grid">
                     <div class="contact_content">
                         <label for="" class="contact_label">Name</label>
-                        <input type="text" class="contact_input" name="name">
+                        <input type="text" class="contact_input" name="name" value="{{ old('name') }}">
                     </div>
                     <div class="contact_content">
                         <label for="" class="contact_label">Email</label>
-                        <input type="email" class="contact_input" name="email">
+                        <input type="email" class="contact_input" name="email" value="{{ old('email') }}">
                     </div>
                 </div>
                 <div class="contact_content">
                     <label for="" class="contact_label">Project</label>
-                    <input type="tetx" class="contact_input" name="project"> 
+                    <input type="tetx" class="contact_input" name="project" value="{{ old('project') }}"> 
                 </div>
                 <div class="contact_content">
                     <label for="description" class="contact_label">Project description</label>
-                    <textarea name="description" id="description" cols="0" rows="7" class="contact_input"></textarea>
+                    <textarea name="description" id="description" cols="0" rows="7" class="contact_input">{{old('description')}}</textarea>
                 </div>
                 <div>
                     <button  type="submit" class="button button--flex">

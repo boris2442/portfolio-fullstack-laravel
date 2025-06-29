@@ -19,7 +19,10 @@ use App\Http\Controllers\Admin\SettingController;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home-page');
-// Route::get('/', [HomeController::class, 'affichService'])->name('home-service');
+
+// ...existing code...
+Route::post('/', [HomeController::class, 'store'])->name('home.store');
+
 Route::middleware(['auth', 'admin'])->group(function () {
 
     Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin-dashboard');
