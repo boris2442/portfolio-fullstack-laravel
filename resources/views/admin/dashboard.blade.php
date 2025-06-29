@@ -14,7 +14,7 @@
                     <div class="overview_cards-item card">
                         <div class="overview_data">
                             <p>Skills</p>
-                            <span>16</span>
+                            <span>{{$skills->count()}}</span>
                         </div>
                         <div class="overview_link">
                             <span></span>
@@ -24,7 +24,7 @@
                     <div class="overview_cards-item card">
                         <div class="overview_data">
                             <p>Educations</p>
-                            <span>16</span>
+                            <span>{{$educations->count()}}</span>
                         </div>
                         <div class="overview_link">
                             <span></span>
@@ -34,7 +34,7 @@
                     <div class="overview_cards-item card">
                         <div class="overview_data">
                             <p>Experience</p>
-                            <span>16</span>
+                            <span>{{$experiences->count()}}</span>
                         </div>
                         <div class="overview_link">
                             <span></span>
@@ -44,7 +44,7 @@
                     <div class="overview_cards-item card">
                         <div class="overview_data">
                             <p>Services</p>
-                            <span>16</span>
+                            <span>{{$services->count()}}</span>
                         </div>
                         <div class="overview_link">
                             <span></span>
@@ -54,7 +54,7 @@
                     <div class="overview_cards-item card">
                         <div class="overview_data">
                             <p>Projects</p>
-                            <span>9</span>
+                            <span>{{$projects->count()}}</span>
                         </div>
                         <div class="overview_link">
                             <span></span>
@@ -64,7 +64,7 @@
                     <div class="overview_cards-item card">
                         <div class="overview_data">
                             <p>Testimonials</p>
-                            <span>9</span>
+                            <span>{{$testimonials->count()}}</span>
                         </div>
                         <div class="overview_link">
                             <span></span>
@@ -74,7 +74,7 @@
                     <div class="overview_cards-item card">
                         <div class="overview_data">
                             <p>Messages</p>
-                            <span>9</span>
+                            <span>{{$messages->count()}}</span>
                         </div>
                         <div class="overview_link">
                             <span></span>
@@ -84,7 +84,7 @@
                     <div class="overview_cards-item card">
                         <div class="overview_data">
                             <p>Users</p>
-                            <span>9</span>
+                            <span>{{$users->count()}}</span>
                         </div>
                         <div class="overview_link">
                             <span></span>

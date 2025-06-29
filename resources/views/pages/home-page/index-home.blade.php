@@ -300,74 +300,7 @@
                     </div>
 
                     @endforeach
-                    <!--============= QUALIFICATION 1 ===========-->
-                    {{-- <div class="qualification_data">
-                        <div>
-                            <h3 class="qualification_title">Computer Science</h3>
-                            <span class="qualification_subtitle">Germany-University</span>
-                            <div class="qualificaation_calender">
-                                <i class="uil uil-calender-alt"></i>
-                                2009 - 2014
-                            </div>
-                        </div>
-                        <div>
-                            <span class="qualification_rounder"></span>
-                            <span class="qualification_line"></span>
-                        </div>
-                    </div> --}}
-                    <!--============= QUALIFICATION 2 ===========-->
-                    {{-- <div class="qualification_data">
-                        <div></div>
-
-                        <div>
-                            <span class="qualification_rounder"></span>
-                            <span class="qualification_line"></span>
-                        </div>
-
-                        <div>
-                            <h3 class="qualification_title">Web Design</h3>
-                            <span class="qualification_subtitle">Germany-Institute</span>
-                            <div class="qualificaation_calender">
-                                <i class="uil uil-calender-alt"></i>
-                                2014 - 2017
-                            </div>
-                        </div>
-
-                    </div> --}}
-                    <!--============= QUALIFICATION 3 ===========-->
-                    {{-- <div class="qualification_data">
-                        <div>
-                            <h3 class="qualification_title">Web Development</h3>
-                            <span class="qualification_subtitle">Germany-Institute</span>
-                            <div class="qualificaation_calender">
-                                <i class="uil uil-calender-alt"></i>
-                                2017 - 2019
-                            </div>
-                        </div>
-                        <div>
-                            <span class="qualification_rounder"></span>
-                            <span class="qualification_line"></span>
-                        </div>
-                    </div> --}}
-                    <!--============= QUALIFICATION 4 ===========-->
-                    {{-- <div class="qualification_data">
-                        <div></div>
-
-                        <div>
-                            <span class="qualification_rounder"></span>
-                            <!--<span class="qualification_line"></span>-->
-                        </div>
-
-                        <div>
-                            <h3 class="qualification_title">Master in UI/UX</h3>
-                            <span class="qualification_subtitle">Germany-Institute</span>
-                            <div class="qualificaation_calender">
-                                <i class="uil uil-calender-alt"></i>
-                                2019 - 2021
-                            </div>
-                        </div>
-
-                    </div> --}}
+                  
 
                 </div>
                 <!--========== QUALIFICATION CONTENT 2 ==========-->
@@ -438,7 +371,7 @@
             <div class="services_content">
                 <div>
                     <i class="uil uil-web-grid services_icon"></i>
-                    {{-- <h3 class="services_title">Ui/Ux <br> Designer</h3> --}}
+                 
                     <h3 class="services_title">{{ $service->title }}</h3>
                 </div>
                 <span class="button button--flex button--small button--link services_button">
@@ -453,22 +386,7 @@
                         <i class="uil uil-times services_modal-close"></i>
 
                         <ul class="services_modal-services grid">
-                            {{-- <li class="services_modal-service">
-                                <i class="uil uil-check-circle services_modal-icon"></i>
-                                <p>I develop the user interface</p>
-                            </li>
-                            <li class="services_modal-service">
-                                <i class="uil uil-check-circle services_modal-icon"></i>
-                                <p>Web page development</p>
-                            </li>
-                            <li class="services_modal-service">
-                                <i class="uil uil-check-circle services_modal-icon"></i>
-                                <p>I create ux element interactions</p>
-                            </li>
-                            <li class="services_modal-service">
-                                <i class="uil uil-check-circle services_modal-icon"></i>
-                                <p>I position your company brand.</p>
-                            </li> --}}
+                            
                             <p>{{ $service->description }}</p>
                         </ul>
                     </div>
@@ -478,122 +396,9 @@
 
 
 
-            <!--============== SERVICES 2 =============-->
+            
 
-
-            {{-- <div class="services_content">
-                <div>
-                    <i class="uil uil-web-grid services_icon"></i>
-                    <h3 class="services_title">Frontend <br> Developer</h3>
-                </div>
-                <span class="button button--flex button--small button--link services_button">
-                    View More
-                    <i class="uil uil-arrow-right button_icon"></i>
-                </span>
-
-                <div class="services_modal">
-                    <div class="services_modal-content">
-                        <h4 class="services_modal-title">Frontend <br> Developer</h4>
-                        <i class="uil uil-times services_modal-close"></i>
-
-                        <ul class="services_modal-services grid">
-                            <li class="services_modal-service">
-                                <i class="uil uil-check-circle services_modal-icon"></i>
-                                <p>I develop the user interface</p>
-                            </li>
-                            <li class="services_modal-service">
-                                <i class="uil uil-check-circle services_modal-icon"></i>
-                                <p>Web page development</p>
-                            </li>
-                            <li class="services_modal-service">
-                                <i class="uil uil-check-circle services_modal-icon"></i>
-                                <p>I create ux element interactions</p>
-                            </li>
-                            <li class="services_modal-service">
-                                <i class="uil uil-check-circle services_modal-icon"></i>
-                                <p>I position your company brand.</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div> --}}
-
-            <!--============== SERVICES 3 =============-->
-            {{-- <div class="services_content">
-                <div>
-                    <i class="uil uil-web-grid services_icon"></i>
-                    <h3 class="services_title">Backend <br> Developer</h3>
-                </div>
-                <span class="button button--flex button--small button--link services_button">
-                    View More
-                    <i class="uil uil-arrow-right button_icon"></i>
-                </span>
-
-                <div class="services_modal">
-                    <div class="services_modal-content">
-                        <h4 class="services_modal-title">Backend <br> Developer</h4>
-                        <i class="uil uil-times services_modal-close"></i>
-
-                        <ul class="services_modal-services grid">
-                            <li class="services_modal-service">
-                                <i class="uil uil-check-circle services_modal-icon"></i>
-                                <p>I develop the user interface</p>
-                            </li>
-                            <li class="services_modal-service">
-                                <i class="uil uil-check-circle services_modal-icon"></i>
-                                <p>Web page development</p>
-                            </li>
-                            <li class="services_modal-service">
-                                <i class="uil uil-check-circle services_modal-icon"></i>
-                                <p>I create ux element interactions</p>
-                            </li>
-                            <li class="services_modal-service">
-                                <i class="uil uil-check-circle services_modal-icon"></i>
-                                <p>I position your company brand.</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div> --}}
-
-
-            <!--============== SERVICES 4 =============-->
-            {{-- <div class="services_content">
-                <div>
-                    <i class="uil uil-web-grid services_icon"></i>
-                    <h3 class="services_title">Branding <br> Designer</h3>
-                </div>
-                <span class="button button--flex button--small button--link services_button">
-                    View More
-                    <i class="uil uil-arrow-right button_icon"></i>
-                </span>
-
-                <div class="services_modal">
-                    <div class="services_modal-content">
-                        <h4 class="services_modal-title">Branding <br> Designer</h4>
-                        <i class="uil uil-times services_modal-close"></i>
-
-                        <ul class="services_modal-services grid">
-                            <li class="services_modal-service">
-                                <i class="uil uil-check-circle services_modal-icon"></i>
-                                <p>I develop the user interface</p>
-                            </li>
-                            <li class="services_modal-service">
-                                <i class="uil uil-check-circle services_modal-icon"></i>
-                                <p>Web page development</p>
-                            </li>
-                            <li class="services_modal-service">
-                                <i class="uil uil-check-circle services_modal-icon"></i>
-                                <p>I create ux element interactions</p>
-                            </li>
-                            <li class="services_modal-service">
-                                <i class="uil uil-check-circle services_modal-icon"></i>
-                                <p>I position your company brand.</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div> --}}
+            
         </div>
     </section>
 
@@ -717,34 +522,7 @@
                     </p>
                 </div>
                 @endforeach
-                <!--========= TESTIMONIAL 2 ==========-->
-
-                <!--========= TESTIMONIAL 3 ==========-->
-                {{-- <div class="testimonial_content swiper-slide">
-                    <div class="testimonial_data">
-                        <div class="testimonial_header">
-                            <img src="{{ asset('template/assets/img/testimonial3.jpeg') }}" alt=""
-                                class="testimonial_img">
-
-                            <div>
-                                <h3 class="testimonial_name">Mike Smith</h3>
-                                <span class="testimonial_client">Client</span>
-                            </div>
-                        </div>
-
-                        <div>
-                            <i class="uil uil-star testimonial_icon-star"></i>
-                            <i class="uil uil-star testimonial_icon-star"></i>
-                            <i class="uil uil-star testimonial_icon-star"></i>
-                            <i class="uil uil-star testimonial_icon-star"></i>
-                            <i class="uil uil-star testimonial_icon-star"></i>
-                        </div>
-                    </div>
-                    <p class="testimonial_description">
-                        I get a good impression,I carry out my project with all the possible
-                        quality and attention and support 24 hours a day.
-                    </p>
-                </div> --}}
+               
 
             </div>
             <!--Add Pagination-->
@@ -785,30 +563,30 @@
                 </div>
             </div>
 
-            <form action="" class="contact_form grid">
+            <form action="" class="contact_form grid" method="post">
                 <div class="contact_inputs grid">
                     <div class="contact_content">
                         <label for="" class="contact_label">Name</label>
-                        <input type="text" class="contact_input ">
+                        <input type="text" class="contact_input" name="name">
                     </div>
                     <div class="contact_content">
                         <label for="" class="contact_label">Email</label>
-                        <input type="email" class="contact_input">
+                        <input type="email" class="contact_input" name="email">
                     </div>
                 </div>
                 <div class="contact_content">
                     <label for="" class="contact_label">Project</label>
-                    <input type="tetx" class="contact_input">
+                    <input type="tetx" class="contact_input" name="project"> 
                 </div>
                 <div class="contact_content">
-                    <label for="" class="contact_label">Project description</label>
-                    <textarea name="" id="" cols="0" rows="7" class="contact_input"></textarea>
+                    <label for="description" class="contact_label">Project description</label>
+                    <textarea name="description" id="description" cols="0" rows="7" class="contact_input"></textarea>
                 </div>
                 <div>
-                    <a href="#" class="button button--flex">
+                    <button  type="submit" class="button button--flex">
                         Send Message
                         <i class="uil uil-message button_icon"></i>
-                    </a>
+                    </button>
                 </div>
             </form>
         </div>

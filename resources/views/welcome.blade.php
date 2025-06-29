@@ -643,7 +643,7 @@
                 <div class="swiper-wrapper">
                     <!--============ PORTFOLIO 1 ==============-->
                     <div class="portfolio_content grid swiper-slide">
-                        <img src="../../template/assets/img/portfolio1.jpeg" alt="" class="portfolio_img">
+                        <img src="{{ asset('template/assets/img/portfolio1.jpeg') }}" alt="" class="portfolio_img">
 
                         <div class="portfolio_data">
                             <h3 class="portfolio_title">Modern Website</h3>
@@ -674,7 +674,7 @@
                     </div>
                     <!--============ PORTFOLIO 3 ==============-->
                     <div class="portfolio_content grid swiper-slide">
-                        <img src="../../template/assets/img/portfolio3.jpeg" alt="" class="portfolio_img">
+                        <img src="{{asset('template/assets/img/portfolio3.jpeg')}}" alt="" class="portfolio_img">
 
                         <div class="portfolio_data">
                             <h3 class="portfolio_title">Online Store</h3>
@@ -715,7 +715,7 @@
                         </a>
                     </div>
 
-                    <img src="../../template/assets/img/dashboard.png" alt="" class="project_img">
+                    <img src="{{asset('template/assets/img/dashboard.png')}}" alt="" class="project_img">
                 </div>
             </div>
         </section>

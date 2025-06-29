@@ -20,4 +20,8 @@ class HomeController extends Controller
 
         return view('pages.home-page.index-home', compact('about', 'services', 'educations', 'testimonials'));
     }
+    // public function create(){
+    //     return view('pages.home-page.index-home';)
+    // }
+    // public function store()
 }
