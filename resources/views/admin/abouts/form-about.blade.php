@@ -4,7 +4,16 @@
         {{ $FormMode === 'edit' ? 'update' : '' }}
         Save Changes</button>
 </div>
-{{ $about }}
+@if(session()->has('success'))
+    <div class="bg-green-400 text-white p-2 rounded">
+        {{ session('success') }}
+    </div>
+@endif
+@if(session()->has('error'))
+    <div class="bg-red-400 text-white p-2 rounded">
+        {{ session('error') }}
+    </div>
+@endif
 <div class="card-wrapper">
     <div class="wrapper_left">
         <div class="card">

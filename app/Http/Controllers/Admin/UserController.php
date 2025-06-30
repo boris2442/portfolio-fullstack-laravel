@@ -31,7 +31,7 @@ class UserController extends Controller
             $image = $request->file('image');
             $imageName = time() . '.' . $image->getClientOriginalExtension();
             $image->move(public_path('images/users'), $imageName);
-            $validateData['image'] = "images/users/$imageName";
+            $validateData['image'] = "$imageName";
         } else {
             $validateData['image'] = 'images/users/default.png';
         }

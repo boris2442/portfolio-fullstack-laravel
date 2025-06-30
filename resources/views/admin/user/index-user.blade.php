@@ -55,9 +55,8 @@
             @foreach($users as $user)
             <div class="user_table-items">
                 <p>
-                    <img src="{{ 
-                        isset($user->image) 
-                        asset('template/assets/img/avatar.jpg') }}" alt="" class="user_img-list">
+                    <img src="{{ $user->image ? asset('images/users/' . $user->image) : asset('template/assets/img/avatar.jpg') }}"
+                        alt="image de {{ $user->name }}" class="user_img-list">
                 </p>
                 <p>{{$user->name}}</p>
                 <p>{{$user->role}}</p>
@@ -83,9 +82,8 @@
     </section>
     <!-------------- USER MODAL --------------->
     <div class="modal ">
-        <form action="{{route('user.store')}}" method="POST"
-        enctype="multipart/form-data" class="modal-form" id="form-user" autocomplete="off"
-        >
+        <form action="{{route('user.store')}}" method="POST" enctype="multipart/form-data" class="modal-form"
+            id="form-user" autocomplete="off">
             @csrf
             <div class="modal-content">
                 <h2>Create User</h2>

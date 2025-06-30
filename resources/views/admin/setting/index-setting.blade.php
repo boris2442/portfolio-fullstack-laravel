@@ -7,7 +7,7 @@
             <div class="setting-wrapper">
                 <div class="setting_nav">
                     <div class="setting-titlebar">
-                        <img src="../../template/assets/img/avatar.jpg" alt="" class="setting-avatar">
+                        <img src="{{ asset('template/assets/img/avatar.jpg') }}" alt="" class="setting-avatar">
                         <p>Natalia Brakux</p>
                     </div>
                     <nav class="nav">
@@ -15,14 +15,14 @@
                             <div class="nav-list">
                                 <ul class="nav-list-item-setting">
                                     <li>
-                                        <a href="about.html" class="nav-active">
+                                        <a href="{{route('admin-dashboard')}}" class="nav-active">
                                             <span><i class="fas fa-cog"></i></span><span>General Setting</span>
                                         </a>
                                     </li>
                                 </ul>
                                 <ul class="nav-list-item-setting">
                                     <li>
-                                        <a href="media.html">
+                                        <a href="{{ route('index-medias') }}">
                                             <span><i class="fas fa-cog"></i></span><span>My social media</span>
                                         </a>
                                     </li>
@@ -31,7 +31,7 @@
                         </div>
                     </nav>
                 </div>
-                <div class="setting_content">
+                {{-- <div class="setting_content">
                     <section class="about" id="about">
                         <div class="titlebar">
                             <h1>General Setting</h1>
@@ -62,7 +62,7 @@
                             </div>
                             <div class="wrapper_right">
                                 <div class="card">
-                                    <img src="../../template/assets/img/avatar.jpg" class="avatar_img">
+                                    <img src="{{ asset('template/assets/img/avatar.jpg') }}" class="avatar_img">
                                     <input type="file" id="fileimg">
                                 </div>
                                 <div class="card">
@@ -77,7 +77,7 @@
                             <button>Save Changes</button>
                         </div>
                     </section>
-                </div>
+                </div> --}}
             </div>
         </section>
     </main>
