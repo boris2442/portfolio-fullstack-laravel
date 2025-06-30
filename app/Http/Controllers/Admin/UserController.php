@@ -12,12 +12,10 @@ class UserController extends Controller
     //
     public function index()
     {
-        return view('admin.user.index-user');
+        $users = User::all();
+        return view('admin.user.index-user', compact('users'));
     }
-    // public function create()
-    // {
-    //     return view('admin.user.create-user');
-    // }
+
     public function store(Request $request)
     {
         $validateData = $request->validate([
@@ -26,12 +24,24 @@ class UserController extends Controller
             'biographie' => 'required|string',
             'role' => 'required|string',
             'password' => 'required|string|min:6',
+            'image' => 'required|mimes:jpeg,gif,png,webm,jpg|max:2048',
         ]);
         $validateData['password'] = Hash::make($validateData['password']);
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images/users'), $imageName);
+            $validateData['image'] = "images/users/$imageName";
+        } else {
+            $validateData['image'] = 'images/users/default.png';
+        }
+
+
         User::create($validateData);
         redirect()->route('user.index')->with('success', 'user add with successfull');
     }
-    public function delete($id)
+
+    public function destroy($id)
     {
         $user = User::findOrFail($id);
         $user->delete();

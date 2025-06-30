@@ -48,30 +48,44 @@
                 <p>Photo</p>
                 <p>Name</p>
                 <p>Role</p>
+                <p>description</p>
                 <p>Actions</p>
             </div>
             <!-- item 1 -->
+            @foreach($users as $user)
             <div class="user_table-items">
                 <p>
-                    <img src="../../template/assets/img/avatar.jpg" alt="" class="user_img-list">
+                    <img src="{{ 
+                        isset($user->image) 
+                        asset('template/assets/img/avatar.jpg') }}" alt="" class="user_img-list">
                 </p>
-                <p>Backend Developer</p>
-                <p>Backend Developer</p>
+                <p>{{$user->name}}</p>
+                <p>{{$user->role}}</p>
+                <p>{{$user->biographie}}</p>
                 <div>
                     <button class="btn success">
                         <i class="fas fa-pencil-alt"></i>
                     </button>
-                    <button class="btn danger">
-                        <i class="far fa-trash-alt"></i>
-                    </button>
+                    {{-- --}}
+                    <form action="{{route('user.destroy', $user->id)}}" method="POST">
+                        @method('DELETE')
+                        @csrf
+                        <button class="btn danger" onClick="return confirm('are you sure to delete this user!?')">
+                            <i class="far fa-trash-alt"></i>
+                        </button>
+                    </form>
+
                 </div>
             </div>
 
         </div>
+        @endforeach
     </section>
     <!-------------- USER MODAL --------------->
     <div class="modal ">
-        <form action="{{route('user.store')}}" method="POST">
+        <form action="{{route('user.store')}}" method="POST"
+        enctype="multipart/form-data" class="modal-form" id="form-user" autocomplete="off"
+        >
             @csrf
             <div class="modal-content">
                 <h2>Create User</h2>
@@ -87,6 +101,11 @@
                     <label>Email</label>
                     <input type="text" name="email" />
                     @error('email')
+                    <span class="text-red-400">{{$message}}</span>
+                    @enderror
+                    <label>image</label>
+                    <input type="file" name="image" />
+                    @error('image')
                     <span class="text-red-400">{{$message}}</span>
                     @enderror
 
