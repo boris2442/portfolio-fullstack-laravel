@@ -58,20 +58,29 @@
             </section>
             <!-------------- USER MODAL --------------->
             <div class="modal " >
-                <div class="modal-content">
+                <form action="{{route('user.store')}}" method="POST">
+                    <div class="modal-content">
                     <h2>Create User</h2>
                     <span class="close-modal">×</span>
                     <hr>
                     <div>
                         <label>Name</label>
-                        <input type="text" />
+                        <input type="text" name="name" />
+                          @error('email')
+                        <span class="text-red-400">{{$name}}</span>
+                        @enderror
 
                         <label>Email</label>
-                        <input type="text" />
+                        <input type="text" name="email" />
+                        @error('email')
+                        <span class="text-red-400">{{$message}}</span>
+                        @enderror
                         
-                        <label>Bio</label>
-                        <textarea cols="20" rows="3"></textarea>
-                       
+                        <label>Biographie</label>
+                        <textarea cols="20" rows="3" name="biographie"></textarea>
+                           @error('email')
+                        <span class="text-red-400">{{$biographie}}</span>
+                        @enderror
                         <p>Type</p>
                         <select name="" id="">
                             <option disabled>Select Role</option>
@@ -80,7 +89,7 @@
                         </select>
 
                         <label>Password</label>
-                        <input  type="password" id="password" >
+                        <input  type="password" id="password" name="password" >
                     </div>
                     <hr>
                     <div class="modal-footer">
@@ -92,7 +101,8 @@
                           Save
                         </button>
                     </div>
-                </div>
+                    </div>
+            </form>
             </div>
         </div>
     </main>
