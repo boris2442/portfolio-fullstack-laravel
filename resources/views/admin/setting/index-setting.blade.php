@@ -8,7 +8,7 @@
                 <div class="setting_nav">
                     <div class="setting-titlebar">
                         <img src="{{ asset('template/assets/img/avatar.jpg') }}" alt="" class="setting-avatar">
-                        <p>Natalia Brakux</p>
+                        <p>{{$user->name}}</p>
                     </div>
                     <nav class="nav">
                         <div class="nav-setting-wrapper">

@@ -39,21 +39,21 @@ class ExperienceController extends Controller
     }
     public function edit($id)
     {
-        // $experience = Experience::findOrFail($id);
-        // return view('admin.experience.edit-experience', compact('experience'));
+         $experience = Experience::findOrFail($id);
+         return view('admin.experience.edit-experience', compact('experience'));
         return view('admin.experience.index-experience');
     }
     public function update(Request $request, $id)
     {
-        // $experience = Experience::findOrFail($id);
-        // $validate = $request->validate(
-        //     [
-        //         "title" => "required|string|max:244",
-        //         "description" => "required|string|max:244|",
-        //         "period" => "required|string|max:255",
-        //     ]
-        // );
-        // $experience->update($validate);
+        $experience = Experience::findOrFail($id);
+        $validate = $request->validate(
+            [
+                "title" => "required|string|max:244",
+                "description" => "required|string|max:244|",
+                "period" => "required|string|max:255",
+            ]
+        );
+        $experience->update($validate);
         return redirect()->route('experience.index')->with('success', 'experience update with successfull');
     }
 }

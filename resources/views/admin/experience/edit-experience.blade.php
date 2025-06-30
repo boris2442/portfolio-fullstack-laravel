@@ -8,7 +8,7 @@
     <section class="experiences" id="experiences">
         <div class="titlebar">
             <h1>Experiences </h1>
-            <button class="open-modal">New Experience</button>
+            <button class="open-modal">Update Experience</button>
         </div>
         <div class="table">
             <div class="table-filter">
@@ -36,31 +36,8 @@
                 <p>Position</p>
                 <p>Actions</p>
             </div>
-            <!-- item 1 -->
-            {{-- <div class="experience_table-items"> --}}
-                @foreach ($experiences as $experience)</p>
-                <div class="experience_table-items">
-                    <p>{{ $experience->company }}</p>
-                    <p>{{ $experience->period }}</p>
-                    <p>{{ $experience->position }}</p>
-                    <div>
-
-                        <a href="{{route('experience.update', $experience->id)}}"> <i class="fas fa-pencil-alt"></i></a>
-
-
-                        <form action="{{ route('experience.destroy', $experience->id) }}" method="POST"
-                            class="inline-block">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn-icon danger"
-                                onclick="return confirm('Are you sure you want to delete this experience?');">
-                                <i class="far fa-trash-alt"></i>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-                @endforeach
-
+          
+                
 
             </div>
 

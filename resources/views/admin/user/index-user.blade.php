@@ -62,9 +62,12 @@
                 <p>{{$user->role}}</p>
                 <p>{{$user->biographie}}</p>
                 <div>
-                    <button class="btn success">
-                        <i class="fas fa-pencil-alt"></i>
-                    </button>
+                    {{-- <button class="btn success"> --}}
+                        <a href="{{ route('user.edit', $user->id) }}">
+
+                            <i class="fas fa-pencil-alt"></i>
+                        </a>
+                        {{-- </button> --}}
                     {{-- --}}
                     <form action="{{route('user.destroy', $user->id)}}" method="POST">
                         @method('DELETE')

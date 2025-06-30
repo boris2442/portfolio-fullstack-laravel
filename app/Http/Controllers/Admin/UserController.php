@@ -60,14 +60,9 @@ class UserController extends Controller
             'email' => 'required|email|max:255',
             'biographie' => 'required|string',
             'role' => 'required|string',
-            'password' => 'nullable|string|min:6',
+          
         ]);
 
-        if ($request->filled('password')) {
-            $validateData['password'] = Hash::make($validateData['password']);
-        } else {
-            unset($validateData['password']);
-        }
 
         $user->update($validateData);
         return redirect()->route('user.index')->with('success', 'User updated successfully');
