@@ -97,7 +97,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     //Route destines aux user
 
     Route::get('/admin/user', [UserController::class, 'index'])->name('user.index');
-    Route::get('/admin/message/create', [UserController::class, 'create'])->name('user.create');
+    //Route::get('/admin/message/create', [UserController::class, 'create'])->name('user.create');
     Route::post('/admin/user/create', [UserController::class, 'store'])->name('user.store');
     Route::delete('/admin/user/{id}', [UserController::class, 'destroy'])->name('user.destroy');
     Route::get('/admin/user/edit/{id}', [UserController::class, 'edit'])->name('user.edit');
