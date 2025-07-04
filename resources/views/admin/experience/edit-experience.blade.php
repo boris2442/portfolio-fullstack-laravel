@@ -6,77 +6,40 @@
 
     <!--==================== EXPERIENCES ====================-->
     <section class="experiences" id="experiences">
-        <div class="titlebar">
-            <h1>Experiences </h1>
-            <button class="open-modal">Update Experience</button>
-        </div>
-        <div class="table">
-            <div class="table-filter">
-                <div>
-                    <ul class="table-filter-list">
-                        <li>
-                            <p class="table-filter-link link-active">All</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="table-search">
-                <div>
-                    <select class="search-select" name="" id="">
-                        <option value="">Filter Experience</option>
-                    </select>
-                </div>
-                <div class="relative">
-                    <input class="search-input" type="text" name="search" placeholder="Search Experience...">
-                </div>
-            </div>
-            <div class="experience_table-heading">
+
+
+
+        <form action="{{ route('experience.update', $experience->id) }}" method="POST">
+            @method('PATCH')
+            @csrf
+            <h2>Update Experience</h2>
+            {{-- <span class="close-modal">×</span> --}}
+            <hr>
+            <div>
                 <p>Company</p>
+                <input type="text" name="company" value="{{$experience->company }}" />
+                @if ($errors->has('company'))
+                <span class="text-danger">{{ $errors->first('company') }}</span>
+                @endif
                 <p>Period</p>
+                <input type="text" name="period" value="{{$experience->period }}" />
+                @if ($errors->has('period'))
+                <span class="text-danger">{{ $errors->first('period') }}</span>
+                @endif
                 <p>Position</p>
-                <p>Actions</p>
+                <input type="text" name="position" value="{{$experience->position }}" />
+                @if ($errors->has('position'))
+                <span class="text-danger">{{ $errors->first('position') }}</span>
+                @endif
             </div>
-          
-                
-
+            <hr>
+            <div class="modal-footer">
+                {{-- <button class="close-modal">Cancel</button> --}}
+                <button class="secondary close-modal">
+                    <span><i class="fa fa-spinner fa-spin"></i></span>Save
+                </button>
             </div>
-
-            <!-------------- EXPERIENCE MODAL --------------->
-            <div class="modal">
-                <div class="modal-content">
-                    <form action="{{ route('experience.store') }}" method="POST">
-                        @csrf
-                        <h2>Create Experience</h2>
-                        <span class="close-modal">×</span>
-                        <hr>
-                        <div>
-                            <p>Company</p>
-                            <input type="text" name="company" value="{{ @old('company') }}" />
-                            @if ($errors->has('company'))
-                            <span class="text-danger">{{ $errors->first('company') }}</span>
-                            @endif
-                            <p>Period</p>
-                            <input type="text" name="period" value="{{ @old('period') }}" />
-                            @if ($errors->has('period'))
-                            <span class="text-danger">{{ $errors->first('period') }}</span>
-                            @endif
-                            <p>Position</p>
-                            <input type="text" name="position" value="{{ @old('position') }}" />
-                            @if ($errors->has('position'))
-                            <span class="text-danger">{{ $errors->first('position') }}</span>
-                            @endif
-                        </div>
-                        <hr>
-                        <div class="modal-footer">
-                            <button class="close-modal">Cancel</button>
-                            <button class="secondary close-modal">
-                                <span><i class="fa fa-spinner fa-spin"></i></span>Save
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+        </form>
     </section>
 
 </main>

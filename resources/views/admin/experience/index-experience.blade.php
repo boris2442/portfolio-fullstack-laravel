@@ -30,12 +30,7 @@
                     <input class="search-input" type="text" name="search" placeholder="Search Experience...">
                 </div>
             </div>
-            <div class="experience_table-heading">
-                <p>Company</p>
-                <p>Period</p>
-                <p>Position</p>
-                <p>Actions</p>
-            </div>
+           
             <!-- item 1 -->
             {{-- <div class="experience_table-items"> --}}
                 @foreach ($experiences as $experience)</p>

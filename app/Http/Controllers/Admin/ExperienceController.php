@@ -41,7 +41,7 @@ class ExperienceController extends Controller
     {
          $experience = Experience::findOrFail($id);
          return view('admin.experience.edit-experience', compact('experience'));
-        return view('admin.experience.index-experience');
+        return view('admin.experience.edit-experience');
     }
     public function update(Request $request, $id)
     {

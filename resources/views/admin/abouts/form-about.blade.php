@@ -30,7 +30,7 @@
             @enderror()
 
             <label for="phone">Phone</label>
-            <input type="text" name="phone" id="phone" value="{{ isset($about->phone) ? $about->name : '' }}">
+            <input type="text" name="phone" id="phone" value="{{ isset($about->phone) ? $about->phone : '' }}">
             @error('phone')
                 <span class='text-red-400'>{{ $message }}</span>
             @enderror()

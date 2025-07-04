@@ -18,7 +18,7 @@
                         </div>
                         <div class="overview_link">
                             <span></span>
-                            <a href="#">View Skills</a>
+                            <a href="{{ route('skill.index') }}">View Skills</a>
                         </div>
                     </div>
                     <div class="overview_cards-item card">
@@ -28,7 +28,7 @@
                         </div>
                         <div class="overview_link">
                             <span></span>
-                            <a href="#">View Educations</a>
+                            <a href="{{ route('education.index') }}">View Educations</a>
                         </div>
                     </div>
                     <div class="overview_cards-item card">
@@ -38,7 +38,7 @@
                         </div>
                         <div class="overview_link">
                             <span></span>
-                            <a href="#">View Experiences</a>
+                            <a href="{{ route('experience.index') }}">View Experiences</a>
                         </div>
                     </div>
                     <div class="overview_cards-item card">
@@ -48,7 +48,7 @@
                         </div>
                         <div class="overview_link">
                             <span></span>
-                            <a href="#">View Services</a>
+                            <a href="{{ route('service.index') }}">View Services</a>
                         </div>
                     </div>
                     <div class="overview_cards-item card">
@@ -58,7 +58,7 @@
                         </div>
                         <div class="overview_link">
                             <span></span>
-                            <a href="#">View Projects</a>
+                            <a href="{{ route('project.index') }}">View Projects</a>
                         </div>
                     </div>
                     <div class="overview_cards-item card">
@@ -68,7 +68,7 @@
                         </div>
                         <div class="overview_link">
                             <span></span>
-                            <a href="#">View Testimonials</a>
+                            <a href="{{ route('testimonial.index') }}">View Testimonials</a>
                         </div>
                     </div>
                     <div class="overview_cards-item card">
@@ -78,7 +78,7 @@
                         </div>
                         <div class="overview_link">
                             <span></span>
-                            <a href="#">View Messages</a>
+                            <a href="{{ route('message.index') }}">View Messages</a>
                         </div>
                     </div>
                     <div class="overview_cards-item card">
@@ -88,7 +88,7 @@
                         </div>
                         <div class="overview_link">
                             <span></span>
-                            <a href="#">View Users</a>
+                            <a href="{{ route('user.index') }}">View Users</a>
                         </div>
                     </div>
 

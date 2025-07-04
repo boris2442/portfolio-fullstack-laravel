@@ -20,9 +20,9 @@
 
     <!-- Styles / Scripts -->
     @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    
-      
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+
     @endif
 </head>
 
@@ -31,7 +31,7 @@
     <header class="header" id="header">
         <nav class="nav container">
             <a href="#home" class="nav_logo">
-                John Doe
+                {{ $about->name }}
             </a>
 
             <div class="nav_menu" id="nav-menu">
@@ -82,7 +82,7 @@
                 </div>
 
                 <div class="home_data">
-                    <h1 class="home_title">Hi, I'am John Doe</h1>
+                    <h1 class="home_title">Hi, I'am {{$about->name}}</h1>
                     <h3 class="home_subtitle">FullStack Web developer</h3>
                     <p class="home_description">
                         High level experience in web design,fornt-en and backend development, producing quality work.
@@ -99,7 +99,8 @@
                     <div class="home_social">
                         <span class="home_social-follow">Follow Me</span>
                         <div class="home_social-links">
-                            <a href="https://www.linkedin.com" target="_blank" class="home_social-icon">
+                            <a href="https://www.linkedin.com/in/boris-aubin-simo-26b9a0369" target="_blank"
+                                class="home_social-icon">
                                 <i class="uil uil-linkedin-alt"></i>
                             </a>
                             <a href="https://www.dribbble.com" target="_blank" class="home_social-icon">
@@ -120,7 +121,8 @@
                         </div>
                         <div class="home_social1">
                             <div class="home_social-link">
-                                <a href="https://www.linkedin.com" target="_blank" class="home_social-icon">
+                                <a href="https://www.linkedin.com/in/boris-aubin-simo-26b9a0369" target="_blank"
+                                    class="home_social-icon">
                                     <i class="uil uil-linkedin-alt"></i>
                                 </a>
                                 <a href="https://www.dribbble.com" target="_blank" class="home_social-icon">
@@ -153,20 +155,20 @@
                     </p>
                     <div class="about_info">
                         <div>
-                            <span class="about_info-title">08+</span>
+                            <span class="about_info-title">01+</span>
                             <span class="about_info-name">Years <br>experience</span>
                         </div>
                         <div>
-                            <span class="about_info-title">25+</span>
+                            <span class="about_info-title">05+</span>
                             <span class="about_info-name">Completed <br>project</span>
                         </div>
                         <div>
-                            <span class="about_info-title">04+</span>
+                            <span class="about_info-title">02+</span>
                             <span class="about_info-name">Companies <br>worked</span>
                         </div>
                     </div>
                     <div class="about_buttons">
-                        <a href="../../template/assets/pdf/johndoe-Cv.pdf" class="button button--flex">
+                        <a href="{{ asset('template/assets/pdf/CV2_complet_boris.pdf') }}" class="button button--flex">
                             Download CV <i class="uil uil-download-alt button_icon"></i>
                         </a>
                     </div>
@@ -731,8 +733,7 @@
                     <div class="testimonial_content swiper-slide">
                         <div class="testimonial_data">
                             <div class="testimonial_header">
-                                <img src="../../template/assets/img/testimonial1.jpeg" alt=""
-                                    class="testimonial_img">
+                                <img src="../../template/assets/img/testimonial1.jpeg" alt="" class="testimonial_img">
 
                                 <div>
                                     <h3 class="testimonial_name">Jay Smith</h3>
@@ -757,11 +758,10 @@
                     <div class="testimonial_content swiper-slide">
                         <div class="testimonial_data">
                             <div class="testimonial_header">
-                                <img src="../../template/assets/img/testimonial2.jpg" alt=""
-                                    class="testimonial_img">
+                                <img src="../../template/assets/img/testimonial2.jpg" alt="" class="testimonial_img">
 
                                 <div>
-                                    <h3 class="testimonial_name">John Smith</h3>
+                                    <h3 class="testimonial_name">{{$about->name}}</h3>
                                     <span class="testimonial_client">Client</span>
                                 </div>
                             </div>
@@ -783,8 +783,7 @@
                     <div class="testimonial_content swiper-slide">
                         <div class="testimonial_data">
                             <div class="testimonial_header">
-                                <img src="../../template/assets/img/testimonial3.jpeg" alt=""
-                                    class="testimonial_img">
+                                <img src="../../template/assets/img/testimonial3.jpeg" alt="" class="testimonial_img">
 
                                 <div>
                                     <h3 class="testimonial_name">Mike Smith</h3>
@@ -875,10 +874,10 @@
         </section>
     </main>
 
-   
+
 
     <!--==================== SCROLL TOP ====================-->
-    <a href="#" class="scrollup" id="scroll-up">
+    <a href="#home" class="scrollup" id="scroll-up">
         <i class="uil uil-arrow-up scrollup_icon"></i>
     </a>
 
